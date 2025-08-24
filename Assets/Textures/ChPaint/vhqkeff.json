@@ -1,0 +1,630 @@
+{
+  "assetCategories": {
+    "surface": {
+      "plaster": {
+        "damaged": {},
+        "old": {},
+        "painted": {}
+      }
+    }
+  },
+  "averageColor": "#000000",
+  "categories": [
+    "surface",
+    "plaster",
+    "painted"
+  ],
+  "comp_version": 1,
+  "description": "",
+  "displacementBias": 0.748511,
+  "displacementCalibrationAccuracy": 0.997376,
+  "displacementScale": 2.186432,
+  "environment": {
+    "biome": "rural",
+    "region": "Africa"
+  },
+  "highest_available_res": 8192,
+  "id": "vhqkeff",
+  "json": {
+    "contentLength": 13146,
+    "uri": "vhqkeff.json"
+  },
+  "maps": [
+    {
+      "averageColor": "#F8F8F8",
+      "bitDepth": 32,
+      "colorSpace": "sRGB",
+      "contentLength": 157021879,
+      "maxIntensity": 255,
+      "mimeType": "image/x-exr",
+      "minIntensity": 205,
+      "name": "AO",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "ao",
+      "uri": "vhqkeff_8K_AO.exr"
+    },
+    {
+      "averageColor": "#F8F8F8",
+      "bitDepth": 8,
+      "colorSpace": "sRGB",
+      "contentLength": 26102409,
+      "maxIntensity": 255,
+      "mimeType": "image/jpeg",
+      "minIntensity": 205,
+      "name": "AO",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "ao",
+      "uri": "vhqkeff_8K_AO.jpg"
+    },
+    {
+      "averageColor": "#A3998C",
+      "bitDepth": 16,
+      "colorSpace": "sRGB",
+      "contentLength": 228017184,
+      "maxIntensity": 185,
+      "mimeType": "image/x-exr",
+      "minIntensity": 94,
+      "name": "Basecolor",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "basecolor",
+      "uri": "vhqkeff_8K_Basecolor.exr"
+    },
+    {
+      "averageColor": "#A3998C",
+      "bitDepth": 8,
+      "colorSpace": "sRGB",
+      "contentLength": 40766053,
+      "maxIntensity": 185,
+      "mimeType": "image/jpeg",
+      "minIntensity": 94,
+      "name": "Basecolor",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "basecolor",
+      "uri": "vhqkeff_8K_Basecolor.jpg"
+    },
+    {
+      "averageColor": "#808080",
+      "bitDepth": 32,
+      "colorSpace": "Linear",
+      "contentLength": 193767004,
+      "maxIntensity": 255,
+      "mimeType": "image/x-exr",
+      "minIntensity": 0,
+      "name": "Bump",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "bump",
+      "uri": "vhqkeff_8K_Bump.exr"
+    },
+    {
+      "averageColor": "#808080",
+      "bitDepth": 8,
+      "colorSpace": "Linear",
+      "contentLength": 13086153,
+      "maxIntensity": 255,
+      "mimeType": "image/jpeg",
+      "minIntensity": 0,
+      "name": "Bump",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "bump",
+      "uri": "vhqkeff_8K_Bump.jpg"
+    },
+    {
+      "averageColor": "#FFFFFF",
+      "bitDepth": 32,
+      "colorSpace": "sRGB",
+      "contentLength": 199854253,
+      "maxIntensity": 255,
+      "mimeType": "image/x-exr",
+      "minIntensity": 255,
+      "name": "Cavity",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "cavity",
+      "uri": "vhqkeff_8K_Cavity.exr"
+    },
+    {
+      "averageColor": "#FFFFFF",
+      "bitDepth": 8,
+      "colorSpace": "sRGB",
+      "contentLength": 23050445,
+      "maxIntensity": 255,
+      "mimeType": "image/jpeg",
+      "minIntensity": 255,
+      "name": "Cavity",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "cavity",
+      "uri": "vhqkeff_8K_Cavity.jpg"
+    },
+    {
+      "averageColor": "#808080",
+      "bitDepth": 32,
+      "colorSpace": "Linear",
+      "contentLength": 260704604,
+      "maxIntensity": 141,
+      "mimeType": "image/x-exr",
+      "minIntensity": 116,
+      "name": "Displacement",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "displacement",
+      "uri": "vhqkeff_8K_Displacement.exr"
+    },
+    {
+      "averageColor": "#808080",
+      "bitDepth": 8,
+      "colorSpace": "Linear",
+      "contentLength": 4012192,
+      "maxIntensity": 141,
+      "mimeType": "image/jpeg",
+      "minIntensity": 116,
+      "name": "Displacement",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "displacement",
+      "uri": "vhqkeff_8K_Displacement.jpg"
+    },
+    {
+      "averageColor": "#5C5C5C",
+      "bitDepth": 32,
+      "colorSpace": "Linear",
+      "contentLength": 177305536,
+      "maxIntensity": 111,
+      "mimeType": "image/x-exr",
+      "minIntensity": 43,
+      "name": "Gloss",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "gloss",
+      "uri": "vhqkeff_8K_Gloss.exr"
+    },
+    {
+      "averageColor": "#5C5C5C",
+      "bitDepth": 8,
+      "colorSpace": "Linear",
+      "contentLength": 30794262,
+      "maxIntensity": 111,
+      "mimeType": "image/jpeg",
+      "minIntensity": 43,
+      "name": "Gloss",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "gloss",
+      "uri": "vhqkeff_8K_Gloss.jpg"
+    },
+    {
+      "averageColor": "#8182FE",
+      "bitDepth": 16,
+      "colorSpace": "Linear",
+      "contentLength": 141881729,
+      "maxIntensity": 165,
+      "mimeType": "image/x-exr",
+      "minIntensity": 121,
+      "name": "Normal",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "normal",
+      "uri": "vhqkeff_8K_Normal.exr"
+    },
+    {
+      "averageColor": "#8182FE",
+      "bitDepth": 8,
+      "colorSpace": "Linear",
+      "contentLength": 29762873,
+      "maxIntensity": 165,
+      "mimeType": "image/jpeg",
+      "minIntensity": 121,
+      "name": "Normal",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "normal",
+      "uri": "vhqkeff_8K_Normal.jpg"
+    },
+    {
+      "averageColor": "#A3A3A3",
+      "bitDepth": 32,
+      "colorSpace": "Linear",
+      "contentLength": 168216118,
+      "maxIntensity": 212,
+      "mimeType": "image/x-exr",
+      "minIntensity": 144,
+      "name": "Roughness",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "roughness",
+      "uri": "vhqkeff_8K_Roughness.exr"
+    },
+    {
+      "averageColor": "#A3A3A3",
+      "bitDepth": 8,
+      "colorSpace": "Linear",
+      "contentLength": 30169609,
+      "maxIntensity": 212,
+      "mimeType": "image/jpeg",
+      "minIntensity": 144,
+      "name": "Roughness",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "roughness",
+      "uri": "vhqkeff_8K_Roughness.jpg"
+    },
+    {
+      "averageColor": "#383838",
+      "bitDepth": 16,
+      "colorSpace": "sRGB",
+      "contentLength": 179768857,
+      "maxIntensity": 56,
+      "mimeType": "image/x-exr",
+      "minIntensity": 56,
+      "name": "Specular",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "specular",
+      "uri": "vhqkeff_8K_Specular.exr"
+    },
+    {
+      "averageColor": "#383838",
+      "bitDepth": 8,
+      "colorSpace": "sRGB",
+      "contentLength": 13176951,
+      "maxIntensity": 56,
+      "mimeType": "image/jpeg",
+      "minIntensity": 56,
+      "name": "Specular",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "specular",
+      "uri": "vhqkeff_8K_Specular.jpg"
+    }
+  ],
+  "meta": [
+    {
+      "key": "scanArea",
+      "name": "Scan Area",
+      "value": "2x2 m"
+    },
+    {
+      "key": "height",
+      "name": "Height",
+      "value": "0.02 m"
+    },
+    {
+      "key": "tileable",
+      "name": "Tileable",
+      "value": true
+    },
+    {
+      "key": "tiling_directions",
+      "name": "Tiling Directions",
+      "value": [
+        "x",
+        "y"
+      ]
+    },
+    {
+      "key": "texelDensity",
+      "name": "Texel Density",
+      "value": "4096 px/m"
+    },
+    {
+      "key": "calibration",
+      "name": "Calibration",
+      "value": "GretagMacbeth ColorChecker Color Rendition Chart"
+    },
+    {
+      "key": "scanner",
+      "name": "Scanner",
+      "value": "MKX"
+    }
+  ],
+  "models": [],
+  "name": "Flaked Paint Wall",
+  "pack": {
+    "_id": "flaked-paint-walls",
+    "name": "Flaked Paint Walls"
+  },
+  "physicalSize": null,
+  "points": 2,
+  "previews": {
+    "images": [
+      {
+        "contentLength": 248741,
+        "resolution": "360x360",
+        "tags": [
+          "thumb"
+        ],
+        "uri": "vhqkeff_Grid_360.png"
+      },
+      {
+        "contentLength": 336431,
+        "resolution": "420x420",
+        "tags": [
+          "thumb"
+        ],
+        "uri": "vhqkeff_Grid_420.png"
+      },
+      {
+        "contentLength": 992553,
+        "resolution": "720x720",
+        "tags": [
+          "thumb",
+          "retina"
+        ],
+        "uri": "vhqkeff_Grid_720.png"
+      },
+      {
+        "contentLength": 1352812,
+        "resolution": "840x840",
+        "tags": [
+          "thumb",
+          "retina"
+        ],
+        "uri": "vhqkeff_Grid_840.png"
+      },
+      {
+        "contentLength": 2415840,
+        "resolution": "1440x768",
+        "tags": [
+          "preview",
+          "clay"
+        ],
+        "uri": "vhqkeff_PopupClay_1440.png"
+      },
+      {
+        "contentLength": 4499576,
+        "resolution": "1920x1080",
+        "tags": [
+          "preview",
+          "clay"
+        ],
+        "uri": "vhqkeff_PopupClay_1920.png"
+      },
+      {
+        "contentLength": 9568790,
+        "resolution": "2880x1536",
+        "tags": [
+          "preview",
+          "clay",
+          "retina"
+        ],
+        "uri": "vhqkeff_PopupClay_2880.png"
+      },
+      {
+        "contentLength": 18340551,
+        "resolution": "3840x2160",
+        "tags": [
+          "preview",
+          "clay",
+          "retina"
+        ],
+        "uri": "vhqkeff_PopupClay_3840.png"
+      },
+      {
+        "contentLength": 2887869,
+        "resolution": "1440x768",
+        "tags": [
+          "preview",
+          "tiled"
+        ],
+        "uri": "vhqkeff_PopupTiled_1440.png"
+      },
+      {
+        "contentLength": 5392071,
+        "resolution": "1920x1080",
+        "tags": [
+          "preview",
+          "tiled"
+        ],
+        "uri": "vhqkeff_PopupTiled_1920.png"
+      },
+      {
+        "contentLength": 11512249,
+        "resolution": "2880x1536",
+        "tags": [
+          "preview",
+          "tiled",
+          "retina"
+        ],
+        "uri": "vhqkeff_PopupTiled_2880.png"
+      },
+      {
+        "contentLength": 22002615,
+        "resolution": "3840x2160",
+        "tags": [
+          "preview",
+          "tiled",
+          "retina"
+        ],
+        "uri": "vhqkeff_PopupTiled_3840.png"
+      },
+      {
+        "contentLength": 2902752,
+        "resolution": "1440x768",
+        "tags": [
+          "preview"
+        ],
+        "uri": "vhqkeff_Popup_1440.png"
+      },
+      {
+        "contentLength": 5403546,
+        "resolution": "1920x1080",
+        "tags": [
+          "preview"
+        ],
+        "uri": "vhqkeff_Popup_1920.png"
+      },
+      {
+        "contentLength": 11595858,
+        "resolution": "2880x1536",
+        "tags": [
+          "preview",
+          "retina"
+        ],
+        "uri": "vhqkeff_Popup_2880.png"
+      },
+      {
+        "contentLength": 22156741,
+        "resolution": "3840x2160",
+        "tags": [
+          "preview",
+          "retina"
+        ],
+        "uri": "vhqkeff_Popup_3840.png"
+      }
+    ],
+    "relativeSize": "1x1",
+    "scaleReferences": []
+  },
+  "process_date": "2024-04-16 22:34:16",
+  "properties": [],
+  "referencePreviews": {
+    "maps": [],
+    "models": []
+  },
+  "references": [],
+  "revised": false,
+  "revision": 0,
+  "semanticTags": {
+    "architectural_style": {},
+    "asset_type": "surface",
+    "city": "Cape Town",
+    "color": [
+      "Gray",
+      "White",
+      "Brown"
+    ],
+    "contains": [
+      "flakes",
+      "paint",
+      "cracks",
+      "plaster",
+      "stains",
+      "seepage"
+    ],
+    "country": "South Africa",
+    "descriptive": [
+      "worn",
+      "old",
+      "flaking",
+      "damaged",
+      "cracked",
+      "weathered",
+      "peeling"
+    ],
+    "environment": [
+      "industrial",
+      "urban"
+    ],
+    "industry": [
+      "games",
+      "archviz",
+      "VFX"
+    ],
+    "interior_exterior": [
+      "exterior"
+    ],
+    "locations": {
+      "Africa": {
+        "South Africa": {
+          "Cape Town": {}
+        }
+      }
+    },
+    "maxSize": 2,
+    "minSize": 2,
+    "name": "Flaked Paint Wall",
+    "orientation": [
+      "wall"
+    ],
+    "region": "Africa",
+    "resolution": 8192,
+    "state": [
+      "old",
+      "damaged"
+    ],
+    "subject_matter": "manmade",
+    "theme": [
+      "buildings",
+      "houses",
+      "homes",
+      "villages",
+      "rural",
+      "countryside",
+      "construction",
+      "walls",
+      "abattoir",
+      "slaughterhouse",
+      "abandoned-places"
+    ]
+  },
+  "tags": [
+    "gray",
+    "white",
+    "brown",
+    "buildings",
+    "houses",
+    "homes",
+    "villages",
+    "rural",
+    "countryside",
+    "construction",
+    "walls",
+    "abattoir",
+    "flakes",
+    "paint",
+    "cracks",
+    "plaster",
+    "stains",
+    "seepage",
+    "worn",
+    "old",
+    "flaking",
+    "damaged",
+    "cracked",
+    "weathered",
+    "peeling"
+  ],
+  "texelDensity": 4096,
+  "texture_type": "basic",
+  "ue_plugin_archives": [
+    {
+      "contentLength": 228380645,
+      "gltfVersion": "2.0",
+      "tier": 0,
+      "type": "gltf",
+      "uri": "ue_plugin_archives/tier_0/vhqkeff_tier_0.zip",
+      "version": 1
+    },
+    {
+      "contentLength": 74580214,
+      "gltfVersion": "2.0",
+      "tier": 1,
+      "type": "gltf",
+      "uri": "ue_plugin_archives/tier_1/vhqkeff_tier_1.zip",
+      "version": 1
+    },
+    {
+      "contentLength": 19708262,
+      "gltfVersion": "2.0",
+      "tier": 2,
+      "type": "gltf",
+      "uri": "ue_plugin_archives/tier_2/vhqkeff_tier_2.zip",
+      "version": 1
+    },
+    {
+      "contentLength": 1537732,
+      "gltfVersion": "2.0",
+      "tier": 3,
+      "type": "gltf",
+      "uri": "ue_plugin_archives/tier_3/vhqkeff_tier_3.zip",
+      "version": 1
+    }
+  ],
+  "version": 2
+}

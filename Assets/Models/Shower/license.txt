@@ -1,0 +1,11 @@
+Model Information:
+* title:	Shower Room - Assets
+* source:	https://sketchfab.com/3d-models/shower-room-assets-8e13a866ee184bed95bb5b59ddee62cd
+* author:	SeverDoes3D (https://sketchfab.com/SeverDoes3D)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Shower Room - Assets" (https://sketchfab.com/3d-models/shower-room-assets-8e13a866ee184bed95bb5b59ddee62cd) by SeverDoes3D (https://sketchfab.com/SeverDoes3D) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

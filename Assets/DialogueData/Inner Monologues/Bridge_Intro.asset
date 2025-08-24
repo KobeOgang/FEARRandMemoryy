@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005f70131e8d7af49bc299ae9ab08318, type: 3}
+  m_Name: Bridge_Intro
+  m_EditorClassIdentifier: 
+  isMonologue: 1
+  conversationLines:
+  - speakerID: Dante
+    dialogueText: What is this place anyway?
+    cameraShotID: 
+    animationTrigger: 
+    displayDuration: 2
+  - speakerID: Dante
+    dialogueText: I don't remember ever coming here...
+    cameraShotID: 
+    animationTrigger: 
+    displayDuration: 2

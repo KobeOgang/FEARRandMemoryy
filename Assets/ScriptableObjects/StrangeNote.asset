@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c715378f74c425046acd8e5a8114191b, type: 3}
+  m_Name: StrangeNote
+  m_EditorClassIdentifier: 
+  itemType: 1
+  itemName: Strange Note
+  description: A strange note with rough handwriting
+  itemText: "I keep hearing it, that dragging sound in the hallway. I barricaded
+    the door, but it still finds a way to scratch at the walls.\r\n\r\nThe others
+    are gone. They said the lights flickering were just power issues, but I know
+    better. It waits for the dark.\r\n\r\nIf you're reading this, don\u2019t trust
+    the mirrors.\n\n- \"M\""
+  icon: {fileID: 21300000, guid: efd20b9fe736240468e72fd1185189bf, type: 3}
+  prefab: {fileID: 2337974390544863287, guid: 7ad5b46ded7455045a21947550b4daaf, type: 3}
