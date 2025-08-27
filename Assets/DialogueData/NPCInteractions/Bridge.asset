@@ -12,12 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 005f70131e8d7af49bc299ae9ab08318, type: 3}
   m_Name: Bridge
   m_EditorClassIdentifier: 
+  isMonologue: 0
   conversationLines:
-  - speakerID: Dante
+  - participantsToSetVisible:
+    - Dante
+    speakerID: Dante
     dialogueText: 'Huh... The bridge collapsed here... I wonder what happened. '
     cameraShotID: Bridge_BridgeShot
     animationTrigger: 
-  - speakerID: Dante
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Dante
+    speakerID: Dante
     dialogueText: Guess I'm going that way...
     cameraShotID: Bridge_RoadShot
     animationTrigger: 
+    displayDuration: 3

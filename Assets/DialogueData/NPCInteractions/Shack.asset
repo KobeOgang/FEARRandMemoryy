@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005f70131e8d7af49bc299ae9ab08318, type: 3}
+  m_Name: Shack
+  m_EditorClassIdentifier: 
+  isMonologue: 0
+  hidePlayerDuringDialogue: 1
+  conversationLines:
+  - participantsToSetVisible:
+    - Shack_Veronica
+    speakerID: '-'
+    dialogueText: 
+    cameraShotID: Shack_Intro
+    animationTrigger: 
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Shack_Dante
+    speakerID: Shack_Dante
+    dialogueText: Hey...
+    cameraShotID: Shack_Enter
+    animationTrigger: Walking
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Shack_Veronica2
+    - Shack_Dante
+    speakerID: Shack_Veronica2
+    dialogueText: "You\u2026 you\u2019re normal\u2026 You\u2019re normal! I thought
+      you were one of them."
+    cameraShotID: Shack_VCloseUp
+    animationTrigger: Pointing
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Shack_Dante
+    speakerID: Shack_Dante
+    dialogueText: Them?
+    cameraShotID: ShackD_CloseUp
+    animationTrigger: Talking
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Shack_Veronica2
+    speakerID: Shack_Veronica2
+    dialogueText: "The walking ones\u2026They walk, but they\u2019re not really like
+      us."
+    cameraShotID: Shack_VCloseUp
+    animationTrigger: 
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Shack_Dante
+    speakerID: Shack_Dante
+    dialogueText: What do you mean? Monsters?
+    cameraShotID: ShackD_CloseUp
+    animationTrigger: Talking2
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Shack_Veronica2
+    speakerID: Shack_Veronica2
+    dialogueText: "Yeah, I guess\u2026 maybe. But they\u2019re easy to hide from.
+      They don\u2019t really bother me."
+    cameraShotID: Shack_VCloseUp
+    animationTrigger: 
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Shack_Dante
+    speakerID: Shack_Dante
+    dialogueText: "I\u2019m lost..."
+    cameraShotID: ShackD_CloseUp
+    animationTrigger: Talking2
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Shack_Veronica2
+    speakerID: Shack_Veronica2
+    dialogueText: "We all are. I don\u2019t know how much time I\u2019ve been here
+      mister\u2026"
+    cameraShotID: Shack_VCloseUp
+    animationTrigger: 
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Shack_Dante
+    speakerID: Shack_Dante
+    dialogueText: ...
+    cameraShotID: ShackD_CloseUp
+    animationTrigger: 
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Shack_Dante
+    speakerID: Shack_Dante
+    dialogueText: "Anyways, I\u2019m Dante. What\u2019s your name?"
+    cameraShotID: ShackD_CloseUp
+    animationTrigger: Talking
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Shack_Veronica2
+    speakerID: Shack_Veronica2
+    dialogueText: Veronica.
+    cameraShotID: Shack_VCloseUp
+    animationTrigger: 
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Shack_Dante
+    speakerID: Shack_Dante
+    dialogueText: "Wait, but what about the constabulary? It\u2019s already curfew,
+      so they should be patrolling. We\u2019re both in trouble"
+    cameraShotID: ShackD_CloseUp
+    animationTrigger: Talking
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Shack_Veronica2
+    speakerID: Shack_Veronica2
+    dialogueText: "They\u2019re not here, mister. No sign of them. You\u2019re the
+      only other person I\u2019ve met."
+    cameraShotID: Shack_VCloseUp
+    animationTrigger: 
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Shack_Dante
+    speakerID: Shack_Dante
+    dialogueText: Hmm...
+    cameraShotID: ShackD_CloseUp
+    animationTrigger: 
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Shack_Veronica2
+    speakerID: Shack_Dante
+    dialogueText: ...
+    cameraShotID: Shack_Intro
+    animationTrigger: 
+    displayDuration: 3

@@ -12,25 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 005f70131e8d7af49bc299ae9ab08318, type: 3}
   m_Name: TestDialogue
   m_EditorClassIdentifier: 
+  isMonologue: 0
   conversationLines:
   - speakerID: Random Stranger
     dialogueText: Are you real?
     cameraShotID: Stranger_Closeup
     animationTrigger: 
-  - speakerID: Player
+    displayDuration: 3
+  - speakerID: Dante
     dialogueText: W...what?
     cameraShotID: Player_Closeup
     animationTrigger: 
+    displayDuration: 3
   - speakerID: Random Stranger
     dialogueText: In this place, nothing is real...
     cameraShotID: Alley_Overview
     animationTrigger: 
+    displayDuration: 3
   - speakerID: Random Stranger
     dialogueText: ...so tread lightly, mister. You'll never know what lies beyond
       the darkness.
     cameraShotID: Stranger_Closeup
     animationTrigger: 
-  - speakerID: Player
+    displayDuration: 3
+  - speakerID: Dante
     dialogueText: Okay then... bye.
     cameraShotID: Player_Closeup
     animationTrigger: 
+    displayDuration: 3

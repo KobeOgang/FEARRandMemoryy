@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMonologue: 1
   conversationLines:
-  - speakerID: Dante
+  - participantsToSetVisible:
+    - Dante
+    speakerID: Dante
     dialogueText: What is this place anyway?
     cameraShotID: 
     animationTrigger: 
     displayDuration: 2
-  - speakerID: Dante
+  - participantsToSetVisible:
+    - Dante
+    speakerID: Dante
     dialogueText: I don't remember ever coming here...
     cameraShotID: 
     animationTrigger: 

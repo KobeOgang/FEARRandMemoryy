@@ -37,6 +37,7 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        PlayMainMenuMusic();
     }
 
     private void Start()

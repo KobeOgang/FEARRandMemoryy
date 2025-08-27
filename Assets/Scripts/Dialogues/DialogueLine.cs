@@ -8,6 +8,8 @@ public class DialogueLine
     [System.NonSerialized]
     public bool isMonologueData = false;
 
+    [Tooltip("(Optional) A list of ALL participant IDs that should be VISIBLE during this line. Others will be hidden.")]
+    public string[] participantsToSetVisible;
 
     [Tooltip("The ID of the character speaking. Must match a Dialogue Participant in the scene.")]
     public string speakerID;

@@ -12,26 +12,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 005f70131e8d7af49bc299ae9ab08318, type: 3}
   m_Name: Intro
   m_EditorClassIdentifier: 
+  isMonologue: 0
+  hidePlayerDuringDialogue: 1
   conversationLines:
-  - speakerID: Dante
+  - participantsToSetVisible:
+    - Intro_Dante1
+    speakerID: Intro_Dante1
     dialogueText: '*Pained Grunts*'
-    cameraShotID: Intro_UpperShot
-    animationTrigger: 
-  - speakerID: Dante
+    cameraShotID: Intro_WormShot
+    animationTrigger: Rising
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Intro_Dante1
+    speakerID: Intro_Dante1
     dialogueText: What? Where am I...
     cameraShotID: Intro_DanteCloseup
     animationTrigger: 
-  - speakerID: Siren
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Intro_Dante1
+    speakerID: Siren
     dialogueText: (Siren Blares)
     cameraShotID: Intro_WideShot
     animationTrigger: 
-  - speakerID: Dante
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Intro_Dante1
+    speakerID: Intro_Dante1
     dialogueText: "Ah crap\u2026 I need to go indoors.. I doubt the constabulary
       gives a pass."
     cameraShotID: Intro_DanteRoadShot
     animationTrigger: 
-  - speakerID: Dante
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Intro_Dante1
+    speakerID: Intro_Dante1
     dialogueText: "Still, what am I doing here? I don\u2019t remember anything\u2026
       at all."
     cameraShotID: Intro_DanteCloseup
-    animationTrigger: 
+    animationTrigger: LookAround
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Intro_Veronica
+    - Intro_Dante1
+    speakerID: Intro_Veronica
+    dialogueText: '-'
+    cameraShotID: Intro_VRunning
+    animationTrigger: Running
+    displayDuration: 1.5
+  - participantsToSetVisible:
+    - Intro_Dante1
+    speakerID: Intro_Dante1
+    dialogueText: Huh...?
+    cameraShotID: Intro_DanteCloseup
+    animationTrigger: Idle
+    displayDuration: 3

@@ -30,6 +30,8 @@ public class DialogueManager : MonoBehaviour
     private bool isTyping = false;
     private string currentFullLine;
 
+    private List<string> lastVisibleParticipants = new List<string>();
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -69,9 +71,13 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(DialogueData data)
     {
+        lastVisibleParticipants.Clear();
         IsDialogueActive = true;
 
-
+        if (data.hidePlayerDuringDialogue && participants.ContainsKey("Dante"))
+        {
+            participants["Dante"].gameObject.SetActive(false);
+        }
 
         // Check the new isMonologue flag
         if (!data.isMonologue)
@@ -139,22 +145,50 @@ public class DialogueManager : MonoBehaviour
 
     private void DisplayLine(DialogueLine line)
     {
+
         currentFullLine = line.dialogueText;
+
+        // First, hide only the participants that were visible on the PREVIOUS line.
+        foreach (string participantID in lastVisibleParticipants)
+        {
+            if (participants.ContainsKey(participantID))
+            {
+                participants[participantID].gameObject.SetActive(false);
+            }
+        }
+        lastVisibleParticipants.Clear(); // Clear the list for the new line
+
+        // Now, show only the participants specified for this current line.
+        if (line.participantsToSetVisible != null)
+        {
+            foreach (string participantID in line.participantsToSetVisible)
+            {
+                if (participants.ContainsKey(participantID))
+                {
+                    participants[participantID].gameObject.SetActive(true);
+                    lastVisibleParticipants.Add(participantID); // Remember them for the next line
+                }
+            }
+        }
 
         // Direct the Camera
         foreach (var cam in cameras.Values) cam.SetActive(false);
-        if (cameras.ContainsKey(line.cameraShotID))
+        if (!string.IsNullOrEmpty(line.cameraShotID) && cameras.ContainsKey(line.cameraShotID))
         {
             cameras[line.cameraShotID].SetActive(true);
         }
 
-        // Trigger the Animation
+        // Set Speaker Name and Trigger Animation
         if (participants.ContainsKey(line.speakerID))
         {
-            speakerNameText.text = line.speakerID;
-            Animator speakerAnimator = participants[line.speakerID].GetComponent<Animator>();
+            DialogueParticipant speaker = participants[line.speakerID];
+            speakerNameText.text = string.IsNullOrEmpty(speaker.displayName) ? speaker.participantID : speaker.displayName;
+
+            // Now that we are SURE the speaker is visible, we can get their Animator.
+            Animator speakerAnimator = speaker.GetComponent<Animator>();
             if (speakerAnimator != null && !string.IsNullOrEmpty(line.animationTrigger))
             {
+                // This should now work reliably.
                 speakerAnimator.SetTrigger(line.animationTrigger);
             }
         }
@@ -200,13 +234,29 @@ public class DialogueManager : MonoBehaviour
 
         // Deactivate all dialogue cameras to return to the main gameplay camera
         foreach (var cam in cameras.Values) cam.SetActive(false);
+
+        // Hide only the participants from the very last line of dialogue.
+        foreach (string participantID in lastVisibleParticipants)
+        {
+            if (participants.ContainsKey(participantID))
+            {
+                participants[participantID].gameObject.SetActive(false);
+            }
+        }
+        lastVisibleParticipants.Clear();
+
+        // Now, find and re-activate the main player character.
+        if (participants.ContainsKey("Dante"))
+        {
+            participants["Dante"].gameObject.SetActive(true);
+        }
     }
 
     // --- Helper methods to find and store scene objects ---
     private void RegisterAllParticipants()
     {
         participants.Clear();
-        foreach (var p in FindObjectsOfType<DialogueParticipant>())
+        foreach (var p in FindObjectsOfType<DialogueParticipant>(true))
         {
             participants[p.participantID] = p;
         }

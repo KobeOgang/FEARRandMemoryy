@@ -304,7 +304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 890658674122506600}
   SFXsource: {fileID: 2989673577473262527}
-  mainMenuMusic: {fileID: 8300000, guid: ec4cc51df176d5343bd55eb8aaa440cb, type: 3}
+  mainMenuMusic: {fileID: 8300000, guid: dd2bca662c213cc4092babb0112cb186, type: 3}
   gameBGM: {fileID: 8300000, guid: dd2bca662c213cc4092babb0112cb186, type: 3}
   gameOverScreenMusic: {fileID: 0}
   doorOpen: {fileID: 0}
