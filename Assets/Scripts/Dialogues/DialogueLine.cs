@@ -23,6 +23,9 @@ public class DialogueLine
     [Tooltip("(Optional) The name of the trigger to fire on the speaker's Animator for this line.")]
     public string animationTrigger;
 
+    [Tooltip("(Optional) A sound effect to play when this line is displayed.")]
+    public AudioClip lineSFX;
+
     [Tooltip("How long this line should be displayed in monologue mode before automatically advancing. (in seconds)")]
     public float displayDuration = 3f;
 }

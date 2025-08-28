@@ -145,7 +145,7 @@ public class DialogueManager : MonoBehaviour
 
     private void DisplayLine(DialogueLine line)
     {
-
+        AudioManager.instance.PlayClip(line.lineSFX);
         currentFullLine = line.dialogueText;
 
         // First, hide only the participants that were visible on the PREVIOUS line.
