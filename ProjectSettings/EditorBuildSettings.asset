@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SlumIndoorssss.unity
     guid: 61a73ee2fe3f40440928126d8b5f0518
+  - enabled: 1
+    path: Assets/Scenes/SlmsB1.unity
+    guid: 26d59492ee7f3e34cab6e8bdfe502bc5
+  - enabled: 1
+    path: Assets/Scenes/SlmsB2.unity
+    guid: d2bb800ecdf75144e93f2fc41b4be035
   m_configObjects: {}

@@ -31,7 +31,7 @@ public class CodexUI : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        /*if (Input.GetKeyDown(KeyCode.J))
         {
             // If another menu is already open, do nothing.
             if (GameUIManager.isMenuOpen && !codexUIParent.activeSelf)
@@ -58,7 +58,7 @@ public class CodexUI : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked; // Lock the cursor again
                 Cursor.visible = false; // Hide the cursor again
             }
-        }
+        }*/
 
         // showing the full text with F
         if (codexUIParent.activeSelf && currentSelectedDocument != null)
@@ -131,5 +131,36 @@ public class CodexUI : MonoBehaviour
         }
 
         fullTextPanel.SetActive(false);
+    }
+
+    public void OpenCodex()
+    {
+        codexUIParent.SetActive(true);
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        PopulateDocumentList();
+
+        // Register with GameUIManager
+        if (GameUIManager.Instance != null)
+        {
+            GameUIManager.Instance.RegisterUIOpened(GameUIManager.UIType.Codex);
+        }
+    }
+
+    public void CloseCodex()
+    {
+        codexUIParent.SetActive(false);
+        
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        fullTextPanel.SetActive(false);
+
+        // Register with GameUIManager
+        if (GameUIManager.Instance != null)
+        {
+            GameUIManager.Instance.RegisterUIClosed(GameUIManager.UIType.Codex);
+        }
     }
 }

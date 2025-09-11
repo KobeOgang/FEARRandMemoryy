@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005f70131e8d7af49bc299ae9ab08318, type: 3}
+  m_Name: Shack 2
+  m_EditorClassIdentifier: 
+  isMonologue: 0
+  hidePlayerDuringDialogue: 1
+  conversationLines:
+  - participantsToSetVisible:
+    - Shack2_Dante
+    - Shack2_Veronica
+    speakerID: Shack2_Dante
+    dialogueText: "Huh\u2026 Wait. what\u2019s this?"
+    cameraShotID: Shack_Wall
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Shack2_Dante
+    - Shack2_Veronica
+    speakerID: Shack2_Dante
+    dialogueText: "It says we need to go to the prison\u2026 to be free? Free from
+      what? I don\u2019t understand."
+    cameraShotID: Shack_Wall
+    animationTrigger: Walking
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Shack2_Veronica
+    - Shack2_Dante
+    speakerID: Shack2_Veronica
+    dialogueText: "There\u2019s no way out, mister. Roads. Cut. It\u2019s like someone
+      just cut the land and the roads."
+    cameraShotID: Shack2_VCloseUp
+    animationTrigger: Talking 1
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Shack2_Dante
+    - Shack2_Veronica
+    speakerID: Shack2_Dante
+    dialogueText: Like the bridge?
+    cameraShotID: Bridge_BridgeShot
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Shack2_Veronica
+    - Shack2_Dante
+    speakerID: Shack2_Veronica
+    dialogueText: Yeah...
+    cameraShotID: Shack2_VCloseUp
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Shack2_Veronica
+    - Shack2_Dante
+    speakerID: Shack2_Veronica
+    dialogueText: There's a way out of town, though. I just can't cut the wires.
+    cameraShotID: Shack2_VCloseUp
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible: []
+    speakerID: '-'
+    dialogueText: 
+    cameraShotID: Shack2_BoltCutter
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Shack2_Dante
+    - 
+    speakerID: Shack2_Dante
+    dialogueText: I think that's something I can help with.
+    cameraShotID: Shack2_BoltCutter
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3

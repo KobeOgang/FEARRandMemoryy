@@ -57,7 +57,6 @@ public class PlayerController : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
 
         // --- LOGIC TO APPLY LOADED DATA ---
-        // Check if the SaveSystem has data waiting to be loaded
         if (SaveSystem.dataToLoad != null)
         {
             Debug.Log("--- STARTING DATA LOAD PROCESS ---");
@@ -95,30 +94,38 @@ public class PlayerController : MonoBehaviour
             SaveSystem.dataToLoad = null;
             Debug.Log("--- DATA LOAD COMPLETE ---");
         }
-        else
-        {
-            Debug.Log("No save data to load, using SceneLoader for spawn point.");
-            // Your existing spawn point logic for normal scene transitions
-            string spawnPointID = SceneLoader.GetAndClearNextSpawnPointID();
-            if (!string.IsNullOrEmpty(spawnPointID))
-            {
-                PlayerSpawnPoint[] spawnPoints = FindObjectsOfType<PlayerSpawnPoint>();
-                foreach (var spawnPoint in spawnPoints)
-                {
-                    if (spawnPoint.spawnPointID == spawnPointID)
-                    {
-                        transform.position = spawnPoint.transform.position;
-                        transform.rotation = spawnPoint.transform.rotation;
-                        break;
-                    }
-                }
-            }
-        }
     }
 
     private void Start()
     {
-        
+        if (SaveSystem.dataToLoad == null)
+        {
+            Debug.Log("No save data was loaded. Checking for a spawn point ID...");
+            string spawnPointID = SceneLoader.GetAndClearNextSpawnPointID();
+            if (!string.IsNullOrEmpty(spawnPointID))
+            {
+                PlayerSpawnPoint[] spawnPoints = FindObjectsOfType<PlayerSpawnPoint>();
+                Debug.Log($"Found {spawnPoints.Length} spawn points in the scene. Looking for ID: {spawnPointID}");
+
+                bool foundSpawn = false;
+                foreach (var spawnPoint in spawnPoints)
+                {
+                    if (spawnPoint.spawnPointID == spawnPointID)
+                    {
+                        rb.position = spawnPoint.transform.position;
+                        rb.velocity = Vector3.zero;
+                        transform.rotation = spawnPoint.transform.rotation;
+                        Debug.Log("Player spawned at: " + spawnPointID);
+                        foundSpawn = true;
+                        break;
+                    }
+                }
+                if (!foundSpawn)
+                {
+                    Debug.LogWarning("Could not find spawn point with ID: " + spawnPointID);
+                }
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -139,11 +146,11 @@ public class PlayerController : MonoBehaviour
         // Rotate player based on active camera mode
         if (isUsingFixedCamera)
         {
-            RotatePlayerWithMouse(); // Mouse-based rotation for fixed cameras
+            RotatePlayerWithMouse(); 
         }
         else
         {
-            SmoothFaceCamera(); // Smooth rotation relative to the top-down camera
+            SmoothFaceCamera(); 
         }
 
         MovePlayer();
@@ -166,14 +173,12 @@ public class PlayerController : MonoBehaviour
         {
             moveSpeed = sprintSpeed;
             // --- RUNNING ANIMATION  ---
-            // Tell the animator that the character IS sprinting.
             //animator.SetBool("IsSprinting", true);
         }
         else
         {
             moveSpeed = normalMoveSpeed;
             // --- WALKING ANIMATION  ---
-            // Tell the animator that the character IS NOT sprinting.
             //animator.SetBool("IsSprinting", false);
         }
     }
@@ -182,7 +187,6 @@ public class PlayerController : MonoBehaviour
     {
         bool isInputHeld = (hInput != 0 || vInput != 0);
 
-        // If the player lets go of the keys, clear the preserved rotation memory.
         if (!isInputHeld)
         {
             preservedRotation = null;
@@ -190,7 +194,7 @@ public class PlayerController : MonoBehaviour
 
         if (isUsingFixedCamera && useTankControls)
         {
-            // Tank Controls: Movement is relative to the player model's orientation
+            // Tank Controls
             moveDirection = playerModel.forward * vInput + playerModel.right * hInput;
         }
         else if (preservedRotation.HasValue && isInputHeld)
@@ -201,7 +205,6 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            // If we have no preserved rotation, use the live camera as normal.
             Transform reference = isUsingFixedCamera ? worldReferenceOrientation : this.orientation;
             moveDirection = reference.forward * vInput + reference.right * hInput;
         }
@@ -210,6 +213,10 @@ public class PlayerController : MonoBehaviour
 
         if (isGrounded)
         {
+            if (Time.frameCount < 5) // Log only for the first few frames
+            {
+                Debug.Log($"Frame {Time.frameCount}: Applying force with input (h:{hInput}, v:{vInput})");
+            }
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
         }
         else
@@ -217,8 +224,7 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
         }
 
-        // --- NEW ANIMATION LOGIC ---
-        // Part A: Handle Locomotion Blend Tree
+        //Handle Locomotion Blend Tree
         float intensity = Input.GetKey(sprintKey) ? 1.0f : 0.5f;
         if (hInput == 0 && vInput == 0)
         {
@@ -232,8 +238,6 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("y", animY);
         animator.SetFloat("x", animX);
 
-        // Part B: Handle Turning-In-Place Triggers
-        // This only runs when the player is idle.
         if (intensity == 0f)
         {
             float angularSpeed = rb.angularVelocity.y;
@@ -316,15 +320,12 @@ public class PlayerController : MonoBehaviour
 
     public void ForceIdle()
     {
-        // Reset the animator's parameters to idle values
         animator.SetFloat("y", 0f);
         animator.SetFloat("x", 0f);
 
-        // Also reset the internal smoothing variables to prevent a sudden jump when dialogue ends
         animY = 0f;
         animX = 0f;
 
-        // Instantly stop any physical movement as well
         if (rb != null)
         {
             rb.velocity = Vector3.zero;

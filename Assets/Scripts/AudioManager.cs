@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Sources")]
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource SFXsource;
+    [SerializeField] private AudioSource FootstepsSource;
 
     [Header("BGM Clips")]
     public AudioClip mainMenuMusic;
@@ -126,6 +127,16 @@ public class AudioManager : MonoBehaviour
         if (clip != null)
         {
             SFXsource.PlayOneShot(clip);
+        }
+    }
+
+    public void PlayClipWithRandomPitch(AudioClip clip, float minPitch, float maxPitch)
+    {
+        if (clip != null)
+        {
+            FootstepsSource.pitch = Random.Range(minPitch, maxPitch);
+            FootstepsSource.PlayOneShot(clip);
+            //FootstepsSource.pitch = 1f;
         }
     }
 

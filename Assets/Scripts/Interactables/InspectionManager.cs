@@ -11,21 +11,21 @@ public class InspectionManager : MonoBehaviour
     public static bool IsInspecting = false;
 
     [Header("UI Elements")]
-    public GameObject inspectionUI;      // Parent canvas for name, description UI
-    public TMP_Text itemNameText;        // TextMeshPro for item name
-    public TMP_Text itemDescriptionText; // TextMeshPro for item description
+    public GameObject inspectionUI;      
+    public TMP_Text itemNameText;        
+    public TMP_Text itemDescriptionText; 
 
     [Header("Inspection Settings")]
     public Transform inspectionTransform;
     public Light inspectionSpotlight;
 
     [Header("Document Reading UI")]
-    public GameObject inspectionFullTextPanel;  // the panel
-    public TMP_Text inspectionFullTextDisplay;  // text element from inside the panel
+    public GameObject inspectionFullTextPanel;  
+    public TMP_Text inspectionFullTextDisplay;  
     public TMP_Text readTextPrompt;
 
 
-    private GameObject currentItem;   // Currently inspected item
+    private GameObject currentItem;  
     private bool isInspecting = false;
 
     private GameObject originalItem;
@@ -91,7 +91,6 @@ public class InspectionManager : MonoBehaviour
                 PersistentObjectID objectID = originalItem.GetComponent<PersistentObjectID>();
                 if (objectID != null)
                 {
-                    // Record this object's ID as collected with our state manager
                     WorldStateManager.Instance.RecordObjectAsCollected(objectID.uniqueID);
                 }
 
@@ -106,7 +105,6 @@ public class InspectionManager : MonoBehaviour
                 }
                 else
                 {
-                    // add item to inventory
                     bool added = InventoryManager.Instance.AddItem(currentItem.GetComponent<InteractableItem>().itemData);
                     if (added)
                     {
@@ -122,7 +120,6 @@ public class InspectionManager : MonoBehaviour
    
             }
 
-            // Exit inspection mode without adding the item
             if (Input.GetMouseButtonDown(1))
             {
                 Destroy(currentItem);
@@ -142,13 +139,10 @@ public class InspectionManager : MonoBehaviour
             inspectionSpotlight.enabled = true;
         }
 
-        // Store reference to the original item
         originalItem = itemObject;
 
-        // Pause the game and lock camera
         Time.timeScale = 0;
 
-        // Enable UI
         inspectionUI.SetActive(true);
         itemNameText.text = itemData.itemName;
         itemDescriptionText.text = itemData.description;
@@ -159,9 +153,8 @@ public class InspectionManager : MonoBehaviour
             inspectionFullTextDisplay.text = itemData.itemText;
         }
 
-        // Place cloned item for inspection
         currentItem = Instantiate(itemObject, inspectionTransform.position, inspectionTransform.rotation);
-        currentItem.GetComponent<Collider>().enabled = false; // Disable collider
+        currentItem.GetComponent<Collider>().enabled = false;
         currentItem.transform.SetParent(inspectionTransform);
 
         isInspecting = true;
@@ -180,13 +173,10 @@ public class InspectionManager : MonoBehaviour
         if (readTextPrompt != null) readTextPrompt.gameObject.SetActive(false);
 
         IsInspecting = false;
-        // Resume the game and unlock camera
         Time.timeScale = 1;
 
-        // Disable UI
         inspectionUI.SetActive(false);
 
-        // Remove inspected item
         Destroy(currentItem);
         currentItem = null;
 

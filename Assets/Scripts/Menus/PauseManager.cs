@@ -4,36 +4,40 @@ using UnityEngine;
 
 public class PauseManager : MonoBehaviour
 {
-    public GameObject pauseMenuPanel; // Reference to the Pause Menu Panel
+    public GameObject pauseMenuPanel;
 
     private bool isPaused = false;
 
     private void Update()
     {
-        // Check if ESC key is pressed
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            TogglePause();
-        }
+        // Remove ESC handling - GameUIManager handles this now
+        // ESC logic moved to GameUIManager
     }
 
+    public void OpenPauseMenu()
+    {
+        isPaused = true;
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        pauseMenuPanel.SetActive(true);
+    }
+
+    public void ClosePauseMenu()
+    {
+        isPaused = false;
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        pauseMenuPanel.SetActive(false);
+    }
+
+    // For UI button calls
     private void TogglePause()
     {
-        isPaused = !isPaused;
-
-        if (isPaused)
+        if (GameUIManager.Instance != null)
         {
-            Time.timeScale = 0f; // Pause the game
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            pauseMenuPanel.SetActive(true); // Show the pause menu
-        }
-        else
-        {
-            Time.timeScale = 1f; // Resume the game
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            pauseMenuPanel.SetActive(false); // Hide the pause menu
+            GameUIManager.Instance.TogglePause();
         }
     }
 }

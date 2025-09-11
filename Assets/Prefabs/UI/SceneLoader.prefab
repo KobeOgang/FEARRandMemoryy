@@ -47,7 +47,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingScreen: {fileID: 6726713674701164603}
   loadingSlider: {fileID: 7823195573680461370}
+  fadeOverlay: {fileID: 0}
+  fadeInDuration: 1
+  fadeOutDuration: 1.2
   minimumLoadTime: 6
+  mainMenuPanel: {fileID: 0}
 --- !u!1001 &662889353103951548
 PrefabInstance:
   m_ObjectHideFlags: 0

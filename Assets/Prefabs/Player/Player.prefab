@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 8013117305607572012}
   - component: {fileID: 3701988441441274615}
   - component: {fileID: 8920885063191943705}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -353,6 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   participantID: Dante
+  displayName: 
 --- !u!1 &7287796231756862156
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,10 +582,71 @@ PrefabInstance:
     - {fileID: -168051006817133204, guid: 328f2985139fd8441a6ed8c1d6051736, type: 3}
     - {fileID: -8582407930827941612, guid: 328f2985139fd8441a6ed8c1d6051736, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 328f2985139fd8441a6ed8c1d6051736, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2062293075291868835}
   m_SourcePrefab: {fileID: 100100000, guid: 328f2985139fd8441a6ed8c1d6051736, type: 3}
 --- !u!4 &6166307639657565585 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 328f2985139fd8441a6ed8c1d6051736, type: 3}
   m_PrefabInstance: {fileID: 5915928213647551098}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6834476919411529515 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 328f2985139fd8441a6ed8c1d6051736, type: 3}
+  m_PrefabInstance: {fileID: 5915928213647551098}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2062293075291868835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6834476919411529515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78a4f4c9682641a47bad1a66f4c1582c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  surfaceTypes:
+  - tag: Dirt
+    footstepSounds:
+    - {fileID: 8300000, guid: 9975d798cf0bb704eb54eeaa0ef8a98f, type: 3}
+    - {fileID: 8300000, guid: a374b9d49a202c84faa7eaf7db2cda8e, type: 3}
+    - {fileID: 8300000, guid: 1429c88e4f8b44548bc225fe4df2ef52, type: 3}
+    - {fileID: 8300000, guid: be336b4edb303ce4ab7a9ab12e9eb5e9, type: 3}
+  - tag: Concrete
+    footstepSounds:
+    - {fileID: 8300000, guid: f8fce86548c822944860d0c6291ba761, type: 3}
+    - {fileID: 8300000, guid: 101afba69c7f46a46991f17d259a16d5, type: 3}
+    - {fileID: 8300000, guid: 836b3ddba4777614facde1a419818152, type: 3}
+    - {fileID: 8300000, guid: 34e01900f9277a946a39acaee0f1e010, type: 3}
+    - {fileID: 8300000, guid: 3f8560423077c6b4ea1d9d744533fe8e, type: 3}
+    - {fileID: 8300000, guid: ed8e6d83adb0b514b946888bb0828d2f, type: 3}
+    - {fileID: 8300000, guid: 86146cf90961dbd41af586d16d985fe9, type: 3}
+    - {fileID: 8300000, guid: 1a287e1751767914d9e8d5b9c8f67e80, type: 3}
+    - {fileID: 8300000, guid: 9f55a1b221f96a344a1036be601bd7e2, type: 3}
+  - tag: Metal
+    footstepSounds:
+    - {fileID: 8300000, guid: e2fdc7238440ecb4d96ff84da22cb5b8, type: 3}
+    - {fileID: 8300000, guid: 0b1d1d8495a40a540b2a6fe0752f5f52, type: 3}
+    - {fileID: 8300000, guid: 2174d3a0a762c8c43b46d00f43cfb1e3, type: 3}
+    - {fileID: 8300000, guid: 1a1bb3d31bd5f9d4b93fe3c25c928661, type: 3}
+    - {fileID: 8300000, guid: e94a9eb44a9ecd749a99ea05d87f1083, type: 3}
+    - {fileID: 8300000, guid: 8c1af458639492346b3f27db432f58b0, type: 3}
+  - tag: Wood
+    footstepSounds:
+    - {fileID: 8300000, guid: 1654f70954f41b84abeb49e272207839, type: 3}
+    - {fileID: 8300000, guid: 8596ce496fab92c40bca39c2af63edcb, type: 3}
+    - {fileID: 8300000, guid: 94dce2dfd8e692c4fae8ff6aac385619, type: 3}
+    - {fileID: 8300000, guid: abb4f0940607e16408988b4de83ef50c, type: 3}
+    - {fileID: 8300000, guid: 9c30ef24eaa272f4aaadf073c52f7c74, type: 3}
+  defaultFootstepSounds: []
+  groundCheckDistance: 20
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  minPitch: 0.65
+  maxPitch: 1.35
+  playerRoot: {fileID: 4876702951944836356}

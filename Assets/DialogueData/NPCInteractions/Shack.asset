@@ -21,6 +21,7 @@ MonoBehaviour:
     dialogueText: 
     cameraShotID: Shack_Intro
     animationTrigger: 
+    lineSFX: {fileID: 0}
     displayDuration: 3
   - participantsToSetVisible:
     - Shack_Dante
@@ -28,6 +29,7 @@ MonoBehaviour:
     dialogueText: Hey...
     cameraShotID: Shack_Enter
     animationTrigger: Walking
+    lineSFX: {fileID: 0}
     displayDuration: 3
   - participantsToSetVisible:
     - Shack_Veronica2
@@ -37,6 +39,7 @@ MonoBehaviour:
       you were one of them."
     cameraShotID: Shack_VCloseUp
     animationTrigger: Pointing
+    lineSFX: {fileID: 0}
     displayDuration: 3
   - participantsToSetVisible:
     - Shack_Dante
@@ -44,6 +47,7 @@ MonoBehaviour:
     dialogueText: Them?
     cameraShotID: ShackD_CloseUp
     animationTrigger: Talking
+    lineSFX: {fileID: 0}
     displayDuration: 3
   - participantsToSetVisible:
     - Shack_Veronica2
@@ -51,14 +55,16 @@ MonoBehaviour:
     dialogueText: "The walking ones\u2026They walk, but they\u2019re not really like
       us."
     cameraShotID: Shack_VCloseUp
-    animationTrigger: 
+    animationTrigger: Talking 1
+    lineSFX: {fileID: 0}
     displayDuration: 3
   - participantsToSetVisible:
     - Shack_Dante
     speakerID: Shack_Dante
-    dialogueText: What do you mean? Monsters?
+    dialogueText: Like what? Monsters?
     cameraShotID: ShackD_CloseUp
-    animationTrigger: Talking2
+    animationTrigger: Wary
+    lineSFX: {fileID: 0}
     displayDuration: 3
   - participantsToSetVisible:
     - Shack_Veronica2
@@ -66,29 +72,34 @@ MonoBehaviour:
     dialogueText: "Yeah, I guess\u2026 maybe. But they\u2019re easy to hide from.
       They don\u2019t really bother me."
     cameraShotID: Shack_VCloseUp
-    animationTrigger: 
+    animationTrigger: Talking 2
+    lineSFX: {fileID: 0}
     displayDuration: 3
   - participantsToSetVisible:
     - Shack_Dante
     speakerID: Shack_Dante
-    dialogueText: "I\u2019m lost..."
+    dialogueText: Nothing makes sense... I just woke up, and I don't know where I
+      am. I'm so lost...
     cameraShotID: ShackD_CloseUp
-    animationTrigger: Talking2
+    animationTrigger: Sad
+    lineSFX: {fileID: 0}
     displayDuration: 3
   - participantsToSetVisible:
     - Shack_Veronica2
     speakerID: Shack_Veronica2
-    dialogueText: "We all are. I don\u2019t know how much time I\u2019ve been here
-      mister\u2026"
+    dialogueText: "We all are. I don\u2019t even know how much time I\u2019ve spent
+      here... I... don't even remember anything aside from my name."
     cameraShotID: Shack_VCloseUp
-    animationTrigger: 
+    animationTrigger: Talking 1
+    lineSFX: {fileID: 0}
     displayDuration: 3
   - participantsToSetVisible:
     - Shack_Dante
     speakerID: Shack_Dante
     dialogueText: ...
     cameraShotID: ShackD_CloseUp
-    animationTrigger: 
+    animationTrigger: HeadShake
+    lineSFX: {fileID: 0}
     displayDuration: 3
   - participantsToSetVisible:
     - Shack_Dante
@@ -96,36 +107,41 @@ MonoBehaviour:
     dialogueText: "Anyways, I\u2019m Dante. What\u2019s your name?"
     cameraShotID: ShackD_CloseUp
     animationTrigger: Talking
+    lineSFX: {fileID: 0}
     displayDuration: 3
   - participantsToSetVisible:
     - Shack_Veronica2
     speakerID: Shack_Veronica2
-    dialogueText: Veronica.
+    dialogueText: Veronica
     cameraShotID: Shack_VCloseUp
-    animationTrigger: 
+    animationTrigger: Talking 1
+    lineSFX: {fileID: 0}
     displayDuration: 3
   - participantsToSetVisible:
     - Shack_Dante
     speakerID: Shack_Dante
     dialogueText: "Wait, but what about the constabulary? It\u2019s already curfew,
-      so they should be patrolling. We\u2019re both in trouble"
+      so they should be patrolling. We\u2019re both in trouble."
     cameraShotID: ShackD_CloseUp
-    animationTrigger: Talking
+    animationTrigger: Wary
+    lineSFX: {fileID: 0}
     displayDuration: 3
   - participantsToSetVisible:
     - Shack_Veronica2
     speakerID: Shack_Veronica2
-    dialogueText: "They\u2019re not here, mister. No sign of them. You\u2019re the
-      only other person I\u2019ve met."
+    dialogueText: No one's here, mister. It's just you, me, and the other ones that
+      don't talk.
     cameraShotID: Shack_VCloseUp
-    animationTrigger: 
+    animationTrigger: Talking 1
+    lineSFX: {fileID: 0}
     displayDuration: 3
   - participantsToSetVisible:
     - Shack_Dante
     speakerID: Shack_Dante
-    dialogueText: Hmm...
+    dialogueText: The one's who don't talk?
     cameraShotID: ShackD_CloseUp
-    animationTrigger: 
+    animationTrigger: HeadShake
+    lineSFX: {fileID: 0}
     displayDuration: 3
   - participantsToSetVisible:
     - Shack_Veronica2
@@ -133,4 +149,5 @@ MonoBehaviour:
     dialogueText: ...
     cameraShotID: Shack_Intro
     animationTrigger: 
+    lineSFX: {fileID: 0}
     displayDuration: 3

@@ -48,10 +48,10 @@ public class SaveView : MonoBehaviour
     private void Update()
     {
         // Allow closing with Escape key
-        if (savePanel.activeSelf && Input.GetKeyDown(KeyCode.Escape))
+        /*if (savePanel.activeSelf && Input.GetKeyDown(KeyCode.Escape))
         {
             Close();
-        }
+        }*/
     }
 
     private void PopulateAutosaveSlot()

@@ -6,7 +6,7 @@ public class ButtonHoverEffect : MonoBehaviour, IPointerEnterHandler, IPointerEx
 {
     public TMP_Text buttonText;
     public float enlargedFontSize = 36f;
-    public Color hoverColor = new Color(1f, 1f, 1f, 1f); // Pure white, fully opaque
+    public Color hoverColor = new Color(1f, 1f, 1f, 1f); 
 
     private float originalFontSize;
     private Color originalColor;

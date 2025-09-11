@@ -35,11 +35,11 @@ public class InventoryUI : MonoBehaviour
         if (inventoryUIParent.activeSelf && currentPuzzleObject != null && Input.GetKeyDown(KeyCode.Escape))
         {
             CloseMenu();
-            return; // Optional: exit the Update method early after closing.
+            return;
         }
 
         // Toggle inventory
-        if (Input.GetKeyDown(KeyCode.Tab))
+        /*if (Input.GetKeyDown(KeyCode.Tab))
         {
             // If another menu is already open, do nothing.
             // Don't allow normal toggling if a puzzle is active or another menu is open
@@ -58,33 +58,55 @@ public class InventoryUI : MonoBehaviour
             {
                 CloseMenu(); // Use helper function
             }
-        }
+        }*/
     }
 
     public void OpenForPuzzle(PuzzleObject puzzleObject)
     {
-        currentPuzzleObject = puzzleObject; // Remember which puzzle we're solving
+        currentPuzzleObject = puzzleObject;
         OpenMenu();
+
+        if (GameUIManager.Instance != null)
+        {
+            GameUIManager.Instance.RegisterUIOpened(GameUIManager.UIType.PuzzleInventory);
+        }
     }
 
     private void OpenMenu()
     {
         inventoryUIParent.SetActive(true);
-        GameUIManager.isMenuOpen = true;
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         PopulateItemList();
+
+        // Register with GameUIManager
+        if (GameUIManager.Instance != null && currentPuzzleObject == null)
+        {
+            GameUIManager.Instance.RegisterUIOpened(GameUIManager.UIType.Inventory);
+        }
     }
 
     private void CloseMenu()
     {
         inventoryUIParent.SetActive(false);
-        GameUIManager.isMenuOpen = false;
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         currentPuzzleObject = null; // IMPORTANT: Forget the puzzle when we close
+
+        // Register with GameUIManager
+        if (GameUIManager.Instance != null)
+        {
+            if (currentPuzzleObject != null)
+            {
+                GameUIManager.Instance.RegisterUIClosed(GameUIManager.UIType.PuzzleInventory);
+            }
+            else
+            {
+                GameUIManager.Instance.RegisterUIClosed(GameUIManager.UIType.Inventory);
+            }
+        }
     }
 
     public void PopulateItemList()
@@ -152,5 +174,15 @@ public class InventoryUI : MonoBehaviour
                 CloseMenu();
             }
         }
+    }
+
+    public void OpenInventory()
+    {
+        OpenMenu();
+    }
+
+    public void CloseInventory()
+    {
+        CloseMenu();
     }
 }

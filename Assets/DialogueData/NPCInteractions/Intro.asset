@@ -21,6 +21,7 @@ MonoBehaviour:
     dialogueText: '*Pained Grunts*'
     cameraShotID: Intro_WormShot
     animationTrigger: Rising
+    lineSFX: {fileID: 0}
     displayDuration: 3
   - participantsToSetVisible:
     - Intro_Dante1
@@ -28,6 +29,7 @@ MonoBehaviour:
     dialogueText: What? Where am I...
     cameraShotID: Intro_DanteCloseup
     animationTrigger: 
+    lineSFX: {fileID: 0}
     displayDuration: 3
   - participantsToSetVisible:
     - Intro_Dante1
@@ -35,6 +37,7 @@ MonoBehaviour:
     dialogueText: (Siren Blares)
     cameraShotID: Intro_WideShot
     animationTrigger: 
+    lineSFX: {fileID: 8300000, guid: b4c4f27d97656f548beb4c61f69bfb0c, type: 3}
     displayDuration: 3
   - participantsToSetVisible:
     - Intro_Dante1
@@ -43,6 +46,7 @@ MonoBehaviour:
       gives a pass."
     cameraShotID: Intro_DanteRoadShot
     animationTrigger: 
+    lineSFX: {fileID: 0}
     displayDuration: 3
   - participantsToSetVisible:
     - Intro_Dante1
@@ -51,6 +55,7 @@ MonoBehaviour:
       at all."
     cameraShotID: Intro_DanteCloseup
     animationTrigger: LookAround
+    lineSFX: {fileID: 0}
     displayDuration: 3
   - participantsToSetVisible:
     - Intro_Veronica
@@ -59,6 +64,7 @@ MonoBehaviour:
     dialogueText: '-'
     cameraShotID: Intro_VRunning
     animationTrigger: Running
+    lineSFX: {fileID: 0}
     displayDuration: 1.5
   - participantsToSetVisible:
     - Intro_Dante1
@@ -66,4 +72,5 @@ MonoBehaviour:
     dialogueText: Huh...?
     cameraShotID: Intro_DanteCloseup
     animationTrigger: Idle
+    lineSFX: {fileID: 0}
     displayDuration: 3

@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - SpawnPoint_FromOutside
+  - Dirt
+  - Concrete
+  - Metal
+  - Wood
+  - SlmsB1_Exit
+  - SlmsB1_Entrance
   layers:
   - Default
   - TransparentFX
@@ -13,8 +19,8 @@ TagManager:
   - Water
   - UI
   - Item
-  - 
-  - 
+  - Unwalkable
+  - Player
   - 
   - 
   - 

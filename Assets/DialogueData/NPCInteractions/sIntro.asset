@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005f70131e8d7af49bc299ae9ab08318, type: 3}
+  m_Name: sIntro
+  m_EditorClassIdentifier: 
+  isMonologue: 0
+  hidePlayerDuringDialogue: 1
+  conversationLines:
+  - participantsToSetVisible:
+    - sIntro_Dante
+    speakerID: sIntro_Dante
+    dialogueText: Where is she??
+    cameraShotID: sIntro_Look
+    animationTrigger: Looking
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - sIntro_Dante
+    speakerID: sIntro_Dante
+    dialogueText: "Looks like I just gotta find a way onwards\u2026\r"
+    cameraShotID: sIntro_View
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - sIntro_Dante
+    speakerID: sIntro_Dante
+    dialogueText: "There\u2019s a few houses with lights\u2026 Maybe I can enter?\r"
+    cameraShotID: sIntro_Light
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - sIntro_Dante
+    speakerID: sIntro_Dante
+    dialogueText: "Maybe there\u2019s people? Let\u2019s see."
+    cameraShotID: sIntro_Last
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3

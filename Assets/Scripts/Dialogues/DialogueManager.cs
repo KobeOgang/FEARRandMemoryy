@@ -10,7 +10,7 @@ public class DialogueManager : MonoBehaviour
     [Header("UI References")]
     public GameObject dialoguePanel;
     public TMP_Text dialogueText;
-    public TMP_Text speakerNameText; // You can use the speakerID directly or have a separate name field
+    public TMP_Text speakerNameText; 
 
     [Header("Character References")]
     public PlayerController playerController;
@@ -18,6 +18,14 @@ public class DialogueManager : MonoBehaviour
     [Header("Text Effect Settings")]
     [Tooltip("The time in seconds between each character appearing.")]
     public float typingSpeed = 0.02f;
+    [Tooltip("The sound to play for each character typed.")]
+    public AudioClip typingSFX;
+    [Tooltip("The minimum pitch for the typing sound.")] 
+    [Range(0.1f, 3f)]                                  
+    public float minTypingPitch = 0.9f;                  
+    [Tooltip("The maximum pitch for the typing sound.")] 
+    [Range(0.1f, 3f)]                                  
+    public float maxTypingPitch = 1.1f;
 
     // --- Private State Variables ---
     private Queue<DialogueLine> lines;
@@ -40,7 +48,6 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
-        // Find all participants and cameras in the scene at the start
         RegisterAllParticipants();
         RegisterAllCameras();
         dialoguePanel.SetActive(false);
@@ -208,6 +215,12 @@ public class DialogueManager : MonoBehaviour
         foreach (char c in line.ToCharArray())
         {
             dialogueText.text += c;
+
+            if (typingSFX != null && !char.IsWhiteSpace(c))
+            {
+                AudioManager.instance.PlayClipWithRandomPitch(typingSFX, minTypingPitch, maxTypingPitch);
+            }
+
             yield return new WaitForSeconds(typingSpeed);
         }
         isTyping = false;
