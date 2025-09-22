@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005f70131e8d7af49bc299ae9ab08318, type: 3}
+  m_Name: MEH
+  m_EditorClassIdentifier: 
+  isMonologue: 0
+  hidePlayerDuringDialogue: 1
+  conversationLines:
+  - participantsToSetVisible:
+    - MEH_Dante1
+    - MEH_MangErnesto
+    speakerID: MEH_Dante1
+    dialogueText: 'Hey... '
+    cameraShotID: ME_Walk
+    animationTrigger: Walking
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - MEH_Dante2
+    - MEH_MangErnesto
+    speakerID: MEH_Dante2
+    dialogueText: '-'
+    cameraShotID: ME_Nudge
+    animationTrigger: Tapping
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - MEH_Dante2
+    - MEH_MangErnesto
+    speakerID: MEH_MangErnesto
+    dialogueText: '-'
+    cameraShotID: ME_LookBack
+    animationTrigger: LookBehind
+    lineSFX: {fileID: 0}
+    displayDuration: 3

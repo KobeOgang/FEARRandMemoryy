@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c715378f74c425046acd8e5a8114191b, type: 3}
+  m_Name: Lion Statuette
+  m_EditorClassIdentifier: 
+  itemType: 0
+  itemName: Lion Statuette
+  description: A small iron statue of a lion. It looks proud, dignified, but also
+    predatory at the same time.
+  itemText: 
+  icon: {fileID: 21300000, guid: bbcb38ac1e3187240b068edc94b0bae2, type: 3}
+  prefab: {fileID: 8718881431357743524, guid: b959c9b569eadc149810927fa7060dc2, type: 3}

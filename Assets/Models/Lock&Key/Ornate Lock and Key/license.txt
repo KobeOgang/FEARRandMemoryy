@@ -1,0 +1,11 @@
+Model Information:
+* title:	Lock and Key
+* source:	https://sketchfab.com/3d-models/lock-and-key-488d66c5251c4aa4b62922f4d837db99
+* author:	AnimaZeal (https://sketchfab.com/Animazeal_13)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Lock and Key" (https://sketchfab.com/3d-models/lock-and-key-488d66c5251c4aa4b62922f4d837db99) by AnimaZeal (https://sketchfab.com/Animazeal_13) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
