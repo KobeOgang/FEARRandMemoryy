@@ -15,14 +15,12 @@ MonoBehaviour:
   itemType: 1
   itemName: Ripped newspaper page
   description: A torn newspaper page with some words scratched out.
-  itemText: "The Daily Bulletin\nDate: September 24, 1972\n\n\nPresident Ferdinand
-    E. Marcos [REDACTED] last night the full implementation of Proclamation No. 1081,
-    placing the entire nation under [REDACTED]\r\n\r\n\u201CWe must silence dissent
-    to preserve the Republic,\u201D he reportedly stated. However, several residents
-    of [REDACTED] claim soldiers arrived before the announcement, dragging men from
-    their homes\u2014\r\n\r\n\u2014[TEXT ILLEGIBLE]\u2014\r\n\r\nLocals whisper of
-    a so-called \"Night Patrol,\" unmarked trucks that [REDACTED] never return. A
-    mother claims she saw her son\u2019s face staring from the back of one.\r\n\r\n\"He
-    was mouthing something... but his lips were [REDACTED] shut.\"\n\n"
+  itemText: "FM Declares Martial Law\nDate: September 24, 1972\n\n\nThe nat'l situation
+    in brief: The president mentions possible communist uprisings in different parts
+    of the Philippines, warranting martial law. \n\nCivilian gov't still functions:
+    The president assures there will be no military takeover, and the decision for
+    martial law is for the safety of civilians.\n\nThere will be curfews to monitor
+    activity, and the Philippine Constabulary Metropolitan Command (Metro Com) will
+    ensure everyone dutifully follows.\n"
   icon: {fileID: 21300000, guid: 452272ad203299e45ae11433ab84aef0, type: 3}
   prefab: {fileID: 237416591072960072, guid: 772b57c0013d30d468a48a6766869c52, type: 3}

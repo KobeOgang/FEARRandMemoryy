@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005f70131e8d7af49bc299ae9ab08318, type: 3}
+  m_Name: Alley
+  m_EditorClassIdentifier: 
+  isMonologue: 0
+  hidePlayerDuringDialogue: 1
+  conversationLines:
+  - participantsToSetVisible:
+    - Alley_Veronica
+    - Alley_Dante
+    speakerID: Alley_Veronica
+    dialogueText: "That\u2019s weird\u2026 they wanted to hurt you\u2026 They usually
+      just hide."
+    cameraShotID: Alley_vEntrance
+    animationTrigger: Walking
+    lineSFX: {fileID: 0}
+    displayDuration: 0
+  - participantsToSetVisible:
+    - Alley_Veronica2
+    - Alley_Dante
+    speakerID: Alley_Dante
+    dialogueText: Those are the weird people you meant?!
+    cameraShotID: Alley_DanteCloseUp
+    animationTrigger: Angry
+    lineSFX: {fileID: 0}
+    displayDuration: 0
+  - participantsToSetVisible:
+    - Alley_Veronica2
+    - Alley_Dante
+    speakerID: Alley_Veronica2
+    dialogueText: Yes, but I didn't think they'd hurt you.
+    cameraShotID: Alley_VCloseUp
+    animationTrigger: Talking 1
+    lineSFX: {fileID: 0}
+    displayDuration: 0
+  - participantsToSetVisible:
+    - Alley_Veronica2
+    - Alley_Dante
+    speakerID: Alley_Dante
+    dialogueText: '*sighs*'
+    cameraShotID: Alley_BEVshot
+    animationTrigger: HeadShake
+    lineSFX: {fileID: 0}
+    displayDuration: 0
+  - participantsToSetVisible:
+    - Alley_Veronica2
+    - Alley_Dante
+    speakerID: Alley_Dante
+    dialogueText: We gotta be careful, then. These things are scary. But atleast
+      the light hurts them.
+    cameraShotID: Alley_DanteCloseUp
+    animationTrigger: Talking
+    lineSFX: {fileID: 0}
+    displayDuration: 0
+  - participantsToSetVisible:
+    - Alley_Veronica2
+    - Alley_Dante
+    speakerID: Alley_Veronica2
+    dialogueText: It seems like they have a bone to pick with you... They don't really
+      care much about me.
+    cameraShotID: Alley_VCloseUp
+    animationTrigger: Shrugging
+    lineSFX: {fileID: 0}
+    displayDuration: 0
+  - participantsToSetVisible:
+    - Alley_Veronica2
+    - Alley_Dante
+    speakerID: Alley_Dante
+    dialogueText: That's odd. Hmm...
+    cameraShotID: Alley_DanteCloseUp
+    animationTrigger: HeadShake
+    lineSFX: {fileID: 0}
+    displayDuration: 0
+  - participantsToSetVisible:
+    - Alley_Veronica2
+    - Alley_Dante
+    speakerID: Alley_Veronica2
+    dialogueText: Let's split up, then! We'll find the exit quicker. It'll be safer
+      for me this way.
+    cameraShotID: Alley_VCloseUp
+    animationTrigger: Talking 1
+    lineSFX: {fileID: 0}
+    displayDuration: 0
+  - participantsToSetVisible:
+    - Alley_Veronica2
+    - Alley_Dante
+    speakerID: Alley_Dante
+    dialogueText: I know what you mean.. It's just that you're a child. I don't know
+      how you can defend yourself.
+    cameraShotID: Alley_DanteCloseUp
+    animationTrigger: Talking
+    lineSFX: {fileID: 0}
+    displayDuration: 0
+  - participantsToSetVisible:
+    - Alley_Veronica2
+    - Alley_Dante
+    speakerID: Alley_Veronica2
+    dialogueText: 'Well, there''s that. '
+    cameraShotID: Alley_VCloseUp
+    animationTrigger: Direction 1
+    lineSFX: {fileID: 0}
+    displayDuration: 0
+  - participantsToSetVisible:
+    - Alley_Veronica2
+    - Alley_Dante
+    speakerID: '-'
+    dialogueText: (A flashlight sits atop a chair)
+    cameraShotID: Alley_Flashlight
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 0
+  - participantsToSetVisible:
+    - Alley_Veronica2
+    - Alley_Dante
+    speakerID: Alley_Dante
+    dialogueText: Hmm... I still think it's better-
+    cameraShotID: Alley_DanteCloseUp
+    animationTrigger: Talking
+    lineSFX: {fileID: 0}
+    displayDuration: 0
+  - participantsToSetVisible:
+    - Alley_Veronica3
+    - Alley_Dante
+    speakerID: Alley_Veronica3
+    dialogueText: Yeah, yeah! I'll meet you in the exit. Wherever that is!
+    cameraShotID: Alley_Exit
+    animationTrigger: Running
+    lineSFX: {fileID: 0}
+    displayDuration: 0
+  - participantsToSetVisible:
+    - Alley_Veronica3
+    - Alley_Dante
+    speakerID: Alley_Dante
+    dialogueText: Hey, wait!!
+    cameraShotID: Alley_DanteBack
+    animationTrigger: Reaching
+    lineSFX: {fileID: 0}
+    displayDuration: 0

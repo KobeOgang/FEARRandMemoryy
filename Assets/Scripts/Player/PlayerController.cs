@@ -31,6 +31,9 @@ public class PlayerController : MonoBehaviour
     private float animX = 0f;
     private float animY = 0f;
 
+    [Header("Death Animation")]
+    [Tooltip("Reference to the player's animator")]
+    public Animator playerAnimator;
 
     public Transform playerModel; 
     public Transform orientation; 
@@ -47,6 +50,10 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     private Animator animator;
 
+    // Death state tracking
+    private bool isDead = false;
+    private bool isPlayingDeathAnimation = false;
+
     private Quaternion? preservedRotation = null;
 
     private void Awake()
@@ -55,6 +62,12 @@ public class PlayerController : MonoBehaviour
         rb.freezeRotation = true;
         readyToJump = true;
         animator = GetComponentInChildren<Animator>();
+
+        // Set playerAnimator reference if not assigned
+        if (playerAnimator == null)
+        {
+            playerAnimator = animator;
+        }
 
         // --- LOGIC TO APPLY LOADED DATA ---
         if (SaveSystem.dataToLoad != null)
@@ -130,6 +143,13 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Don't process any movement if dead or playing death animation
+        if (isDead || isPlayingDeathAnimation)
+        {
+            rb.velocity = Vector3.zero;
+            return;
+        }
+
         if (InspectionManager.IsInspecting || DialogueManager.IsNormalDialogueActive)
         {
             rb.velocity = Vector3.zero;
@@ -140,10 +160,8 @@ public class PlayerController : MonoBehaviour
         PlayerInput();
         SpeedControl();
 
-        // Handle ground drag
         rb.drag = isGrounded ? groundDrag : 0f;
 
-        // Rotate player based on active camera mode
         if (isUsingFixedCamera)
         {
             RotatePlayerWithMouse(); 
@@ -194,7 +212,6 @@ public class PlayerController : MonoBehaviour
 
         if (isUsingFixedCamera && useTankControls)
         {
-            // Tank Controls
             moveDirection = playerModel.forward * vInput + playerModel.right * hInput;
         }
         else if (preservedRotation.HasValue && isInputHeld)
@@ -213,7 +230,7 @@ public class PlayerController : MonoBehaviour
 
         if (isGrounded)
         {
-            if (Time.frameCount < 5) // Log only for the first few frames
+            if (Time.frameCount < 5)
             {
                 Debug.Log($"Frame {Time.frameCount}: Applying force with input (h:{hInput}, v:{vInput})");
             }
@@ -224,32 +241,34 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
         }
 
-        //Handle Locomotion Blend Tree
-        float intensity = Input.GetKey(sprintKey) ? 1.0f : 0.5f;
-        if (hInput == 0 && vInput == 0)
+        if (!isDead && !isPlayingDeathAnimation)
         {
-            intensity = 0f;
-        }
-        Vector3 localMoveDirection = playerModel.transform.InverseTransformDirection(moveDirection.normalized);
-        float targetY = localMoveDirection.z * intensity;
-        float targetX = localMoveDirection.x * intensity;
-        animY = Mathf.Lerp(animY, targetY, Time.deltaTime / animationSmoothTime);
-        animX = Mathf.Lerp(animX, targetX, Time.deltaTime / animationSmoothTime);
-        animator.SetFloat("y", animY);
-        animator.SetFloat("x", animX);
-
-        if (intensity == 0f)
-        {
-            float angularSpeed = rb.angularVelocity.y;
-            float turnThreshold = 0.2f; 
-
-            if (angularSpeed > turnThreshold)
+            float intensity = Input.GetKey(sprintKey) ? 1.0f : 0.5f;
+            if (hInput == 0 && vInput == 0)
             {
-                animator.SetTrigger("TurnRight");
+                intensity = 0f;
             }
-            else if (angularSpeed < -turnThreshold)
+            Vector3 localMoveDirection = playerModel.transform.InverseTransformDirection(moveDirection.normalized);
+            float targetY = localMoveDirection.z * intensity;
+            float targetX = localMoveDirection.x * intensity;
+            animY = Mathf.Lerp(animY, targetY, Time.deltaTime / animationSmoothTime);
+            animX = Mathf.Lerp(animX, targetX, Time.deltaTime / animationSmoothTime);
+            animator.SetFloat("y", animY);
+            animator.SetFloat("x", animX);
+
+            if (intensity == 0f)
             {
-                animator.SetTrigger("TurnLeft");
+                float angularSpeed = rb.angularVelocity.y;
+                float turnThreshold = 0.2f;
+
+                if (angularSpeed > turnThreshold)
+                {
+                    animator.SetTrigger("TurnRight");
+                }
+                else if (angularSpeed < -turnThreshold)
+                {
+                    animator.SetTrigger("TurnLeft");
+                }
             }
         }
     }
@@ -275,6 +294,75 @@ public class PlayerController : MonoBehaviour
     {
         readyToJump = true;
     }
+
+    #region Death Animation System
+    public void TriggerDeath()
+    {
+        if (isDead || isPlayingDeathAnimation) return;
+
+        isPlayingDeathAnimation = true;
+
+        // Stop all movement immediately
+        rb.velocity = Vector3.zero;
+
+        // Set animation parameters to idle
+        animX = 0f;
+        animY = 0f;
+        animator.SetFloat("x", 0f);
+        animator.SetFloat("y", 0f);
+
+        // Trigger death animation
+        if (playerAnimator != null)
+        {
+            playerAnimator.SetBool("isDead", true);
+        }
+
+        Debug.Log("Death animation triggered");
+    }
+
+    public bool IsDeathAnimationComplete()
+    {
+        if (!isPlayingDeathAnimation) return false;
+
+        if (playerAnimator != null)
+        {
+            AnimatorStateInfo stateInfo = playerAnimator.GetCurrentAnimatorStateInfo(0);
+            return stateInfo.IsName("Death") && stateInfo.normalizedTime >= 1.0f;
+        }
+
+        return true; 
+    }
+
+    public bool IsDead()
+    {
+        return isDead;
+    }
+
+    public bool IsPlayingDeathAnimation()
+    {
+        return isPlayingDeathAnimation;
+    }
+
+    public void SetDeathComplete()
+    {
+        isDead = true;
+        isPlayingDeathAnimation = false;
+    }
+
+    public void ResetDeath()
+    {
+        isDead = false;
+        isPlayingDeathAnimation = false;
+
+        if (playerAnimator != null)
+        {
+            playerAnimator.SetBool("isDead", false);
+        }
+
+        animX = 0f;
+        animY = 0f;
+    }
+    #endregion
 
     public void PreserveCurrentOrientation()
     {
@@ -308,7 +396,6 @@ public class PlayerController : MonoBehaviour
 
     private void RotatePlayerWithMouse()
     {
-        // Allow player rotation with mouse input
         float mouseX = Input.GetAxis("Mouse X");
         playerModel.Rotate(Vector3.up, mouseX * rotationSpeed);
 

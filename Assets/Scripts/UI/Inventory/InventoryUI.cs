@@ -7,11 +7,11 @@ using UnityEngine.UI;
 public class InventoryUI : MonoBehaviour
 {
     [Header("UI Panels")]
-    public GameObject inventoryUIParent; // inventory UI panel
+    public GameObject inventoryUIParent;
 
     [Header("List Elements")]
-    public Transform itemListContentParent;   // parent object for the vertical list
-    public GameObject itemListItemPrefab;     // prefab for each item in the list
+    public Transform itemListContentParent;
+    public GameObject itemListItemPrefab;
 
     [Header("Display Elements")]
     public Image displayItemIcon;
@@ -19,12 +19,11 @@ public class InventoryUI : MonoBehaviour
     public TMP_Text displayItemDescription;
     public Button useItemButton;
 
-    private PuzzleObject currentPuzzleObject; // Stores which puzzle opened the inventory
-    private ItemData selectedItemData; // Stores which item is currently selected
+    private PuzzleObject currentPuzzleObject;
+    private ItemData selectedItemData;
 
     void Start()
     {
-        // Start with the inventory hidden
         inventoryUIParent.SetActive(false);
         if (useItemButton != null)
             useItemButton.gameObject.SetActive(false);
@@ -37,28 +36,6 @@ public class InventoryUI : MonoBehaviour
             CloseMenu();
             return;
         }
-
-        // Toggle inventory
-        /*if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            // If another menu is already open, do nothing.
-            // Don't allow normal toggling if a puzzle is active or another menu is open
-            if (currentPuzzleObject != null || (GameUIManager.isMenuOpen && !inventoryUIParent.activeSelf))
-            {
-                return;
-            }
-
-
-            bool isActive = !inventoryUIParent.activeSelf;
-            if (isActive)
-            {
-                OpenMenu(); // Use helper function
-            }
-            else
-            {
-                CloseMenu(); // Use helper function
-            }
-        }*/
     }
 
     public void OpenForPuzzle(PuzzleObject puzzleObject)
@@ -93,7 +70,13 @@ public class InventoryUI : MonoBehaviour
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        currentPuzzleObject = null; // IMPORTANT: Forget the puzzle when we close
+
+        if (currentPuzzleObject != null)
+        {
+            currentPuzzleObject.OnInventoryClosed();
+        }
+
+        currentPuzzleObject = null;
 
         // Register with GameUIManager
         if (GameUIManager.Instance != null)
@@ -111,7 +94,7 @@ public class InventoryUI : MonoBehaviour
 
     public void PopulateItemList()
     {
-        // Clear old list items before repopulating
+        //Clear old list items
         foreach (Transform child in itemListContentParent)
         {
             Destroy(child.gameObject);
@@ -119,14 +102,17 @@ public class InventoryUI : MonoBehaviour
 
         if (InventoryManager.Instance.inventory.Count == 0)
         {
-            // Clear the display panel if no items are left
             displayItemIcon.gameObject.SetActive(false);
             displayItemName.text = "";
             displayItemDescription.text = "Inventory is empty.";
+
+            // Hide use button when inventory is empty
+            if (useItemButton != null)
+                useItemButton.gameObject.SetActive(false);
+
             return;
         }
 
-        // Create a new list item for each item in the inventory
         for (int i = InventoryManager.Instance.inventory.Count - 1; i >= 0; i--)
         {
             ItemData item = InventoryManager.Instance.inventory[i];
@@ -141,38 +127,128 @@ public class InventoryUI : MonoBehaviour
 
     public void DisplayItem(ItemData data)
     {
-        selectedItemData = data; // Keep track of the selected item
+        selectedItemData = data;
 
         displayItemName.text = data.itemName;
         displayItemDescription.text = data.description;
         displayItemIcon.sprite = data.icon;
         displayItemIcon.gameObject.SetActive(true);
 
-        // Only show the "Use" button if the inventory was opened by a puzzle
+        // Show use button for puzzle interactions OR consumable items
+        bool shouldShowUseButton = false;
+
         if (currentPuzzleObject != null)
         {
+            // Puzzle mode - show for all items
+            shouldShowUseButton = true;
+        }
+        else if (data.itemType == ItemData.ItemType.Consumable)
+        {
+            // Normal inventory mode - show only for consumables
+            shouldShowUseButton = true;
+        }
+
+        if (shouldShowUseButton)
+        {
             useItemButton.gameObject.SetActive(true);
-            // Hook up the OnClick event for the button
-            useItemButton.onClick.RemoveAllListeners(); // Clear previous listeners
+            useItemButton.onClick.RemoveAllListeners();
             useItemButton.onClick.AddListener(OnUseButtonPressed);
+
+            // Update button text based on context
+            TMP_Text buttonText = useItemButton.GetComponentInChildren<TMP_Text>();
+            if (buttonText != null)
+            {
+                if (currentPuzzleObject != null)
+                {
+                    buttonText.text = "Use Item";
+                }
+                else if (data.itemType == ItemData.ItemType.Consumable)
+                {
+                    buttonText.text = "Consume";
+                }
+            }
+        }
+        else
+        {
+            useItemButton.gameObject.SetActive(false);
         }
     }
 
     private void OnUseButtonPressed()
     {
-        if (currentPuzzleObject != null && selectedItemData != null)
-        {
-            // Tell the puzzle object that we are using the selected item on it
-            currentPuzzleObject.UseItemOnPuzzle(selectedItemData);
+        if (selectedItemData == null) return;
 
-            // Re-populate the list in case the item was consumed
+        if (currentPuzzleObject != null)
+        {
+            // Handle puzzle interaction
+            currentPuzzleObject.UseItemOnPuzzle(selectedItemData);
             PopulateItemList();
 
-            // Check if the puzzle was solved and disabled itself
             if (currentPuzzleObject.enabled == false)
             {
                 CloseMenu();
             }
+        }
+        else if (selectedItemData.itemType == ItemData.ItemType.Consumable)
+        {
+            // Handle consumable item
+            ConsumeItem(selectedItemData);
+        }
+    }
+
+    private void ConsumeItem(ItemData consumableItem)
+    {
+        // Find the PlayerHealth component
+        PlayerHealth playerHealth = FindObjectOfType<PlayerHealth>();
+
+        if (playerHealth == null)
+        {
+            Debug.LogError("InventoryUI: PlayerHealth component not found! Cannot consume item.");
+            return;
+        }
+
+        // Check if player is already at full health
+        if (playerHealth.GetCurrentHealth() >= playerHealth.maxHealth)
+        {
+            Debug.Log("Player is already at full health. Cannot use health pack.");
+            // Optionally show a message to the player
+            ShowConsumableMessage("I don't think I need that right now...");
+            return;
+        }
+
+        // Heal the player
+        playerHealth.Heal(consumableItem.healAmount);
+
+        // Remove the item from inventory
+        bool itemRemoved = InventoryManager.Instance.RemoveItem(consumableItem);
+
+        if (itemRemoved)
+        {
+            Debug.Log($"Consumed {consumableItem.itemName}, healed for {consumableItem.healAmount} health.");
+
+            // Refresh the inventory display
+            PopulateItemList();
+        }
+        else
+        {
+            Debug.LogError("Failed to remove consumed item from inventory!");
+        }
+    }
+
+    private void ShowConsumableMessage(string message)
+    {
+        // Close the inventory UI first
+        CloseMenu();
+
+        // Show the notification using UINotificationManager
+        if (UINotificationManager.Instance != null)
+        {
+            UINotificationManager.Instance.ShowNotificationForDuration(message, 2.5f);
+        }
+        else
+        {
+            // Fallback if UINotificationManager not found
+            Debug.Log($"Consumable Message: {message}");
         }
     }
 

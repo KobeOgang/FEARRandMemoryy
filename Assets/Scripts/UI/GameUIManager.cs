@@ -310,9 +310,18 @@ public class GameUIManager : MonoBehaviour
                 break;
 
             case UIType.Save:
+                if (saveView == null)
+                {
+                    saveView = FindObjectOfType<SaveView>();
+                }
+
                 if (saveView != null)
                 {
-                    saveView.Open();
+                    saveView.OpenInternal();
+                }
+                else
+                {
+                    Debug.LogError("GameUIManager: SaveView component not found!");
                 }
                 break;
 
@@ -362,7 +371,7 @@ public class GameUIManager : MonoBehaviour
             case UIType.Save:
                 if (saveView != null)
                 {
-                    saveView.Close();
+                    saveView.CloseInternal();
                 }
                 break;
 

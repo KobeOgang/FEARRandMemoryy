@@ -11,23 +11,21 @@ public class InspectionManager : MonoBehaviour
     public static bool IsInspecting = false;
 
     [Header("UI Elements")]
-    public GameObject inspectionUI;      
-    public TMP_Text itemNameText;        
-    public TMP_Text itemDescriptionText; 
+    public GameObject inspectionUI;
+    public TMP_Text itemNameText;
+    public TMP_Text itemDescriptionText;
 
     [Header("Inspection Settings")]
     public Transform inspectionTransform;
     public Light inspectionSpotlight;
 
     [Header("Document Reading UI")]
-    public GameObject inspectionFullTextPanel;  
-    public TMP_Text inspectionFullTextDisplay;  
+    public GameObject inspectionFullTextPanel;
+    public TMP_Text inspectionFullTextDisplay;
     public TMP_Text readTextPrompt;
 
-
-    private GameObject currentItem;  
+    private GameObject currentItem;
     private bool isInspecting = false;
-
     private GameObject originalItem;
     private bool isReadingDocument = false;
 
@@ -63,61 +61,63 @@ public class InspectionManager : MonoBehaviour
         {
             if (currentItem.GetComponent<InteractableItem>().itemData.itemType == ItemData.ItemType.Document)
             {
-                // toggle the full text view
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     isReadingDocument = !isReadingDocument;
                     inspectionFullTextPanel.SetActive(isReadingDocument);
-
                     currentItem.SetActive(!isReadingDocument);
                 }
             }
 
             if (isReadingDocument) return;
 
-            // Rotate the item based on mouse movement
             float mouseX = Input.GetAxis("Mouse X");
             float mouseY = Input.GetAxis("Mouse Y");
             currentItem.transform.Rotate(Vector3.up, -mouseX * 5f, Space.World);
             currentItem.transform.Rotate(Vector3.right, mouseY * 5f, Space.World);
 
-            // Add item to inventory and exit inspection mode
             if (Input.GetMouseButtonDown(0))
             {
-                // Get the item data from the inspected item
                 ItemData dataOfInspectedItem = currentItem.GetComponent<InteractableItem>().itemData;
+                InteractableItem interactableComponent = originalItem.GetComponent<InteractableItem>();
 
-                // Get the Unique ID component from the original object in the scene
                 PersistentObjectID objectID = originalItem.GetComponent<PersistentObjectID>();
                 if (objectID != null)
                 {
                     WorldStateManager.Instance.RecordObjectAsCollected(objectID.uniqueID);
                 }
 
-                // if t's a document, add it to the Codex
+                bool itemPickedUp = false;
+
                 if (dataOfInspectedItem.itemType == ItemData.ItemType.Document)
                 {
                     CodexManager.Instance.AddDocument(dataOfInspectedItem);
-
-                    Destroy(originalItem);
-                    Destroy(currentItem);
-                    EndInspection();
+                    itemPickedUp = true;
                 }
                 else
                 {
                     bool added = InventoryManager.Instance.AddItem(currentItem.GetComponent<InteractableItem>().itemData);
                     if (added)
                     {
-                        Destroy(originalItem); 
-                        Destroy(currentItem);  
-                        EndInspection();      
+                        itemPickedUp = true;
                     }
                     else
                     {
                         Debug.LogWarning("Item could not be added to inventory (likely inventory is full).");
                     }
                 }
-   
+
+                if (itemPickedUp)
+                {
+                    if (interactableComponent != null)
+                    {
+                        StartCoroutine(HandlePickupResponse(interactableComponent));
+                    }
+
+                    Destroy(originalItem);
+                    Destroy(currentItem);
+                    EndInspection();
+                }
             }
 
             if (Input.GetMouseButtonDown(1))
@@ -126,12 +126,20 @@ public class InspectionManager : MonoBehaviour
                 EndInspection();
             }
         }
+    }
 
+    
+    private IEnumerator HandlePickupResponse(InteractableItem interactableComponent)
+    {
+        // Wait a frame to ensure inspection UI is properly closed
+        yield return null;
+
+        // Trigger the pickup response
+        interactableComponent.TriggerPickupResponse();
     }
 
     public void StartInspection(ItemData itemData, GameObject itemObject)
     {
-
         IsInspecting = true;
 
         if (inspectionSpotlight != null)
@@ -140,7 +148,6 @@ public class InspectionManager : MonoBehaviour
         }
 
         originalItem = itemObject;
-
         Time.timeScale = 0;
 
         inspectionUI.SetActive(true);
@@ -158,8 +165,12 @@ public class InspectionManager : MonoBehaviour
         currentItem.transform.SetParent(inspectionTransform);
 
         isInspecting = true;
-    }
 
+        if (GameUIManager.Instance != null)
+        {
+            GameUIManager.Instance.RegisterUIOpened(GameUIManager.UIType.Inspection);
+        }
+    }
 
     public void EndInspection()
     {
@@ -181,6 +192,10 @@ public class InspectionManager : MonoBehaviour
         currentItem = null;
 
         isInspecting = false;
-    }
 
+        if (GameUIManager.Instance != null)
+        {
+            GameUIManager.Instance.RegisterUIClosed(GameUIManager.UIType.Inspection);
+        }
+    }
 }

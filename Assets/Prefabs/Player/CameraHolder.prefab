@@ -752,7 +752,7 @@ MonoBehaviour:
   player: {fileID: 0}
   playerObj: {fileID: 0}
   rb: {fileID: 0}
-  rotationSpeed: 20
+  rotationSpeed: 3
 --- !u!114 &1918658252623405792
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -47,6 +47,44 @@ public class InventoryManager : MonoBehaviour
         return true;
     }
 
+    public bool RemoveItem(ItemData item)
+    {
+        if (inventory.Contains(item))
+        {
+            inventory.Remove(item);
+            Debug.Log("Removed item: " + item.itemName);
+
+            // Refresh UI if it's currently open
+            if (inventoryUI != null && inventoryUI.inventoryUIParent.activeSelf)
+            {
+                inventoryUI.PopulateItemList();
+            }
+
+            return true;
+        }
+
+        Debug.LogWarning("Attempted to remove item not in inventory: " + item.itemName);
+        return false;
+    }
+
+    public bool HasItem(ItemData item)
+    {
+        return inventory.Contains(item);
+    }
+
+    public int GetItemCount(ItemData item)
+    {
+        int count = 0;
+        foreach (ItemData inventoryItem in inventory)
+        {
+            if (inventoryItem == item)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
+
     public void ApplyLoadedData(GameData data)
     {
         this.inventory = data.inventoryItems;

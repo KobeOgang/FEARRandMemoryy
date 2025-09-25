@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class SavePoint : MonoBehaviour
 {
-    [Tooltip("Assign your SaveView_Panel from the Canvas here.")]
-    [SerializeField] private SaveView saveView;
 
     [Tooltip("Assign the '[E] Save Game' prompt UI element here.")]
     [SerializeField] private GameObject interactPrompt;
@@ -22,8 +20,14 @@ public class SavePoint : MonoBehaviour
     {
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.E))
         {
-            // When the player interacts, open the Save View.
-            saveView.Open();
+            if (GameUIManager.Instance != null)
+            {
+                GameUIManager.Instance.OpenUI(GameUIManager.UIType.Save);
+            }
+            else
+            {
+                Debug.LogError("SavePoint: GameUIManager not found!");
+            }
         }
     }
 

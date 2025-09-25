@@ -148,6 +148,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoadingScreenCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8204400581091857230, guid: 584aca07df4bdbe4882b7edfd02bd15b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

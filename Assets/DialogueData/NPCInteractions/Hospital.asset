@@ -1,0 +1,315 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005f70131e8d7af49bc299ae9ab08318, type: 3}
+  m_Name: Hospital
+  m_EditorClassIdentifier: 
+  isMonologue: 0
+  hidePlayerDuringDialogue: 1
+  conversationLines:
+  - participantsToSetVisible:
+    - Hospital_Nurse
+    speakerID: '-'
+    dialogueText: 
+    cameraShotID: Hospital_White
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Nurse
+    speakerID: '-'
+    dialogueText: 
+    cameraShotID: Hospital_WakeUp
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Nurse
+    speakerID: Hospital_Dante
+    dialogueText: Huh... Where am I?
+    cameraShotID: Hospital_WakeUp
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Nurse0
+    speakerID: Hospital_Nurse0
+    dialogueText: Y-You're awake. It's a miracle.
+    cameraShotID: Hospital_NurseSurprised
+    animationTrigger: Surprised
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante
+    speakerID: Hospital_Dante
+    dialogueText: W-what?
+    cameraShotID: Hospital_WakeUp2
+    animationTrigger: WakeUp
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Nurse
+    speakerID: Hospital_Nurse
+    dialogueText: You can stay down. It could be difficult for you to rise.
+    cameraShotID: Hospital_NurseSurprised
+    animationTrigger: Talking1
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Nurse
+    speakerID: Hospital_Dante
+    dialogueText: It's okay. I have it.
+    cameraShotID: Hospital_NurseSurprised
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante2
+    - Hospital_Nurse2
+    speakerID: Hospital_Dante2
+    dialogueText: (Dante rises from the bed)
+    cameraShotID: Hospital_Stand
+    animationTrigger: Stand
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante3
+    - Hospital_Nurse2
+    speakerID: Hospital_Nurse2
+    dialogueText: Are there no irregularities? No difficulties in movement?
+    cameraShotID: Hospital_NurseDialogue
+    animationTrigger: Talking2
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante3
+    - Hospital_Nurse2
+    speakerID: Hospital_Dante3
+    dialogueText: No, not really....
+    cameraShotID: Hospital_NurseDialogue2
+    animationTrigger: No
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante3
+    - Hospital_Nurse2
+    speakerID: Hospital_Dante3
+    dialogueText: Why? What happened to me?
+    cameraShotID: Hospital_NurseDialogue2
+    animationTrigger: Talking2
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante3
+    - Hospital_Nurse2
+    speakerID: Hospital_Nurse2
+    dialogueText: You were in a coma, and really, it's no surprise because you were
+      rushed here drenched with a bullet wound.
+    cameraShotID: Hospital_NurseDialogue3
+    animationTrigger: Talking1
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante3
+    - Hospital_Nurse2
+    speakerID: Hospital_Nurse2
+    dialogueText: Really, it's a miracle you even survived. You and that little child.
+    cameraShotID: Hospital_NurseDialogue2
+    animationTrigger: Talking2
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante3
+    - Hospital_Nurse2
+    speakerID: Hospital_Dante3
+    dialogueText: The child? Veronica?
+    cameraShotID: Hospital_NurseDialogue3
+    animationTrigger: Talking3
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante3
+    - Hospital_Nurse2
+    speakerID: Hospital_Nurse2
+    dialogueText: Yes! Exactly, that's what she said her name was. She woke up earlier-
+    cameraShotID: Hospital_Stand
+    animationTrigger: Talking1
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante3
+    - Hospital_Nurse2
+    speakerID: 
+    dialogueText: (There's knocking on the door)
+    cameraShotID: Hospital_DoorKnock
+    animationTrigger: Talking3
+    lineSFX: {fileID: 8300000, guid: 0677b21a09b0cc04a9f71ac888358984, type: 3}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante3
+    - Hospital_Nurse2
+    speakerID: Hospital_Nurse2
+    dialogueText: Speak of the devil, I think that's her.
+    cameraShotID: Hospital_NurseDialogue2
+    animationTrigger: Talking1
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante3
+    - Hospital_Nurse2
+    - Hospital_Veronica
+    speakerID: Hospital_Veronica
+    dialogueText: Dante!! You really kept your promise, huh?
+    cameraShotID: Hospital_DoorKnock2
+    animationTrigger: HappyWalk
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante4
+    - Hospital_Nurse2
+    - Hospital_Veronica
+    speakerID: Hospital_Dante4
+    dialogueText: Yeah, I'm glad you're fine too, kid.
+    cameraShotID: Hospital_DanteV
+    animationTrigger: Laughing
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante4
+    - Hospital_Veronica
+    - Hospital_Nurse3
+    speakerID: Hospital_Nurse3
+    dialogueText: Well, I'll leave it to you guys to reconnect. I'll need to tell
+      the doctor about this.
+    cameraShotID: Hospital_NurseWalk
+    animationTrigger: Walking
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante4
+    - Hospital_Veronica2
+    speakerID: Hospital_Dante4
+    dialogueText: So...
+    cameraShotID: Hospital_DV
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante4
+    - Hospital_Veronica2
+    speakerID: Hospital_Dante4
+    dialogueText: Kid, do you remember... everything?
+    cameraShotID: Hospital_DanteShoulder
+    animationTrigger: Talking
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante4
+    - Hospital_Veronica2
+    speakerID: Hospital_Veronica2
+    dialogueText: The town, the prison. Yes, but it's foggy. Like a dream.
+    cameraShotID: Hospital_Veronica
+    animationTrigger: Talking3
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante4
+    - Hospital_Veronica2
+    speakerID: Hospital_Veronica2
+    dialogueText: The nurse told me that dreams close to death are visits to the
+      purgatory... that's sorta cryptic...
+    cameraShotID: Hospital_VBehind
+    animationTrigger: Talking 2
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante4
+    - Hospital_Veronica2
+    speakerID: Hospital_Dante4
+    dialogueText: Kid, if you remember the officers and me, you didn't, alright?
+    cameraShotID: Hospital_DanteShoulder
+    animationTrigger: Talking
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante4
+    - Hospital_Veronica2
+    speakerID: Hospital_Dante4
+    dialogueText: It's better if you forget all of it.
+    cameraShotID: Hospital_DanteShoulder
+    animationTrigger: Talking2
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante4
+    - Hospital_Veronica2
+    speakerID: Hospital_Dante4
+    dialogueText: "Because it\u2019s dangerous to remember. Maybe someday, we'll
+      get to tell the world, but not yet."
+    cameraShotID: Hospital_DanteV
+    animationTrigger: Talking 2
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante4
+    - Hospital_Veronica2
+    speakerID: Hospital_Dante4
+    dialogueText: "There will come a time when this country changes. New leaders,
+      kind ones. It\u2019ll come."
+    cameraShotID: Hospital_DanteShoulder
+    animationTrigger: Talking
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante4
+    - Hospital_Veronica2
+    speakerID: Hospital_Dante4
+    dialogueText: But until then, let's be safe.
+    cameraShotID: Hospital_DV
+    animationTrigger: Talking2
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante4
+    - Hospital_Veronica2
+    speakerID: Hospital_Veronica2
+    dialogueText: Alright.
+    cameraShotID: Hospital_Veronica
+    animationTrigger: Nod
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante4
+    - Hospital_Veronica2
+    speakerID: Hospital_Veronica2
+    dialogueText: I trust you.
+    cameraShotID: Hospital_DV
+    animationTrigger: Nod
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante4
+    - Hospital_Veronica2
+    speakerID: '-'
+    dialogueText: '-'
+    cameraShotID: Hospital_DV2
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Hospital_Dante4
+    - Hospital_Veronica2
+    speakerID: '-'
+    dialogueText: '-'
+    cameraShotID: Hospital_White
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3

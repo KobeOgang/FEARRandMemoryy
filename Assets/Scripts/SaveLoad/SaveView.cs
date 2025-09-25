@@ -17,9 +17,21 @@ public class SaveView : MonoBehaviour
     [SerializeField] private Button confirmNoButton;
 
     private int selectedSlot;
+    private bool isInitialized = false;
+
+    private void Awake()
+    {
+        // Ensure initialization happens before any other component tries to use this
+        InitializeComponent();
+    }
 
     private void Start()
     {
+        if (!isInitialized)
+        {
+            InitializeComponent();
+        }
+
         // Hook up confirmation button listeners
         confirmYesButton.onClick.AddListener(OnConfirmOverwrite);
         confirmNoButton.onClick.AddListener(OnCancelOverwrite);
@@ -27,8 +39,71 @@ public class SaveView : MonoBehaviour
         confirmationPopup.SetActive(false);
     }
 
+    private void InitializeComponent()
+    {
+        if (isInitialized) return;
+
+        // Validate all required components
+        if (savePanel == null)
+        {
+            Debug.LogError("SaveView: savePanel is not assigned in the inspector!", this);
+            return;
+        }
+
+        if (slotContainer == null)
+        {
+            Debug.LogError("SaveView: slotContainer is not assigned in the inspector!", this);
+            return;
+        }
+
+        if (saveSlotPrefab == null)
+        {
+            Debug.LogError("SaveView: saveSlotPrefab is not assigned in the inspector!", this);
+            return;
+        }
+
+        isInitialized = true;
+        Debug.Log("SaveView: Component initialized successfully");
+    }
+
     public void Open()
     {
+        if (GameUIManager.Instance != null)
+        {
+            GameUIManager.Instance.OpenUI(GameUIManager.UIType.Save);
+        }
+        else
+        {
+            OpenInternal();
+        }
+    }
+
+    public void Close()
+    {
+        if (GameUIManager.Instance != null)
+        {
+            GameUIManager.Instance.CloseUI(GameUIManager.UIType.Save);
+        }
+        else
+        {
+            CloseInternal();
+        }
+    }
+
+    public void OpenInternal()
+    {
+        if (!isInitialized)
+        {
+            InitializeComponent();
+        }
+
+        if (!isInitialized)
+        {
+            Debug.LogError("SaveView: Cannot open - component not properly initialized!");
+            return;
+        }
+
+        Debug.Log("SaveView: Opening save panel");
         savePanel.SetActive(true);
         PopulateSlots();
         PopulateAutosaveSlot();
@@ -37,9 +112,12 @@ public class SaveView : MonoBehaviour
         Cursor.visible = true;
     }
 
-    public void Close()
+    public void CloseInternal()
     {
-        savePanel.SetActive(false);
+        if (savePanel != null)
+        {
+            savePanel.SetActive(false);
+        }
         Time.timeScale = 1f; // Resume game
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

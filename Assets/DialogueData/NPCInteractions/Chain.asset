@@ -45,7 +45,7 @@ MonoBehaviour:
   - participantsToSetVisible:
     - Chain_Dante
     speakerID: Chain_Dante
-    dialogueText: Wait! Where are you going?!
+    dialogueText: Wait Kiddo!! Where are you going??
     cameraShotID: Chain_Reach
     animationTrigger: 
     lineSFX: {fileID: 0}

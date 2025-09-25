@@ -1,0 +1,354 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005f70131e8d7af49bc299ae9ab08318, type: 3}
+  m_Name: Flashback 3 Torture
+  m_EditorClassIdentifier: 
+  isMonologue: 0
+  hidePlayerDuringDialogue: 1
+  conversationLines:
+  - participantsToSetVisible:
+    - FBT_Dante
+    - FBT_Officer1
+    - FBT_Officer2
+    - MetalCan1
+    speakerID: FBT_Dante
+    dialogueText: '-'
+    cameraShotID: FBT_DanteChair
+    animationTrigger: SitTired
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Flashback2_Dante
+    - FBT_Officer1
+    - FBT_Officer2
+    - MetalCan1
+    speakerID: FBT_Officer1
+    dialogueText: You checked around? Made sure nobody else is there?
+    cameraShotID: FBT_OfficerShoulder
+    animationTrigger: Talking1
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FBT_Officer1
+    - FBT_Officer2
+    - MetalCan1
+    speakerID: FBT_Officer2
+    dialogueText: "I\u2019ve checked"
+    cameraShotID: FBT_Room
+    animationTrigger: Sulk
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FB2_Cop
+    - MetalCan1
+    - FBT_Dante2
+    speakerID: FBT_Dante2
+    dialogueText: (It's my third time in this room. I don't even know where this
+      is...)
+    cameraShotID: FBT_DanteChair2
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FB2_Cop
+    - MetalCan1
+    - FBT_Dante2
+    speakerID: FBT_Dante2
+    dialogueText: (I was blindfolded on the way here...)
+    cameraShotID: FBT_DanteChair2
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FB2_Cop
+    - MetalCan1
+    speakerID: FBT_Dante2
+    dialogueText: (A window? Where is this? The edge of prison?)
+    cameraShotID: FBT_Window
+    animationTrigger: SitTired2
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FB2_Cop
+    - MetalCan1
+    speakerID: FBT_Dante2
+    dialogueText: (A taste of freedom while I'm being knocked out of my senses...)
+    cameraShotID: FBT_Window
+    animationTrigger: SitTired2
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FBT_Dante2
+    - FBT_Officer1
+    - FBT_Officer2
+    - MetalCan1
+    speakerID: FBT_Officer1
+    dialogueText: We can make this easy, Dante. Answer the question or...
+    cameraShotID: FBT_OfficerWalk
+    animationTrigger: Walking
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FBT_Officer1
+    - FBT_Officer2
+    - MetalCan1
+    speakerID: FBT_Officer1
+    dialogueText: Pick your poison. Water, electricity, nails-
+    cameraShotID: FBT_Tools
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FBT_Dante2
+    - FBT_Officer1
+    - FBT_Officer2
+    speakerID: FBT_Officer1
+    dialogueText: What was that??
+    cameraShotID: FBT_Room2
+    animationTrigger: 
+    lineSFX: {fileID: 8300000, guid: caedf4cef2eb23b42acb386d4e792161, type: 3}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FBT_Officer1
+    - FBT_Officer2
+    - MetalCan2
+    speakerID: '-'
+    dialogueText: (A metal can fell from the room's opening)
+    cameraShotID: FBT_MetalCanFall
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FBT_Officer1
+    - FBT_Officer2
+    - FBT_Veronica
+    - MetalCan2
+    speakerID: FBT_Dante2
+    dialogueText: (??? A child is peeking from outside. I can't move.)
+    cameraShotID: FBT_Peeking
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FBT_Dante2
+    - FBT_Officer1
+    - FBT_Officer2
+    - FBT_Veronica
+    speakerID: FBT_Officer1
+    dialogueText: Is that one of your communist mates, Dante? Here to rescue you?
+    cameraShotID: FBT_Peeking
+    animationTrigger: Talking1
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FBT_Dante5
+    - FBT_Officer1
+    - FBT_Officer2
+    - FBT_Veronica
+    speakerID: FBT_Officer1
+    dialogueText: I know where you are...
+    cameraShotID: FBT_ChildSeen
+    animationTrigger: Talking1
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FBT_Dante2
+    - FBT_Officer1
+    - FBT_Officer2
+    - FBT_Veronica2
+    - VeronicaBlood
+    speakerID: FBT_Officer1
+    dialogueText: (The officer shoots)
+    cameraShotID: FBT_VeronicaBleeding
+    animationTrigger: Talking1
+    lineSFX: {fileID: 8300000, guid: c7665ffa41d22a3458734c497b653246, type: 3}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FBT_Dante2
+    - FBT_Officer1
+    - FBT_Officer2
+    - FBT_Veronica2
+    - VeronicaBlood
+    speakerID: FBT_Dante2
+    dialogueText: NOOOO!!!!
+    cameraShotID: FBT_VeronicaBleeding
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FBT_Dante2
+    - FBT_Officer1
+    - FBT_Officer2SC
+    - FBT_Veronica
+    - VeronicaBlood
+    speakerID: FBT_Officer2SC
+    dialogueText: Sir, it's a child! I-
+    cameraShotID: FBT_OfficerSC
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FBT_Dante2
+    - FBT_Officer1
+    - FBT_Officer2SC
+    - FBT_Veronica
+    - VeronicaBlood
+    speakerID: FBT_Officer2SC
+    dialogueText: I- don't think she has anything to do with the insurgent!
+    cameraShotID: FBT_OfficerSC
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FBT_Dante2
+    - FBT_Officer1
+    - FBT_Officer2SC
+    - FBT_Veronica
+    - VeronicaBlood
+    speakerID: FBT_Officer1
+    dialogueText: Dammit! Bring it here!
+    cameraShotID: FBT_OfficerSC
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FBT_Dante3
+    - FBT_Officer1
+    - FBT_Officer2SC
+    - FBT_Veronica
+    - VeronicaBlood
+    speakerID: '-'
+    dialogueText: (There's a heavy silence after the gunshot.)
+    cameraShotID: FBT_Black
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FBT_Dante4
+    - FBT_Officer1
+    - FBT_Officer2SC
+    - Dying_Veronica
+    - VeronicaBlood
+    speakerID: FBT_Dante3
+    dialogueText: (I'm so sorry, little girl. I couldn't save you. I couldn't move.)
+    cameraShotID: FBT_DanteChair3
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FBT_Dante4
+    - FBT_Officer1
+    - FBT_Officer2SC
+    - Dying_Veronica
+    - VeronicaBlood
+    speakerID: FBT_Dante3
+    dialogueText: (Even if I could, I'm not sure what I could have done...)
+    cameraShotID: FBT_DanteChair3
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FBT_Dante4
+    - FBT_Officer1
+    - FBT_Officer2
+    - Dying_Veronica
+    - VeronicaBlood
+    speakerID: FBT_Officer2
+    dialogueText: What do we do, sarge. This could be trouble.
+    cameraShotID: FBT_Room
+    animationTrigger: Talking1
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FBT_Dante6
+    - FBT_Officer1
+    - FBT_Officer2
+    - Dying_Veronica
+    - VeronicaBlood
+    speakerID: FBT_Officer1
+    dialogueText: "They were 'trouble'... And it\u2019s our job to eliminate trouble."
+    cameraShotID: FBT_ChildSeen
+    animationTrigger: Talking1
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FBT_Dante6
+    - FBT_Officer1
+    - FBT_Officer2
+    - Dying_Veronica
+    - VeronicaBlood
+    speakerID: FBT_Officer1
+    dialogueText: There's still someone left.
+    cameraShotID: FBT_ChildSeen
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FBT_Dante6
+    - FBT_Officer1
+    - FBT_Officer2
+    - Dying_Veronica
+    - VeronicaBlood
+    speakerID: FBT_Officer1
+    dialogueText: I'm sorry, Dante. You've seen too much.
+    cameraShotID: FBT_ChildSeen
+    animationTrigger: Talking1
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Dying_Dante
+    - FBT_Officer1
+    - FBT_Officer2
+    - Dying_Veronica
+    - VeronicaBlood
+    speakerID: FBT_Officer1
+    dialogueText: 
+    cameraShotID: FBT_DeadBodies
+    animationTrigger: Talking1
+    lineSFX: {fileID: 8300000, guid: c7665ffa41d22a3458734c497b653246, type: 3}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Dying_Dante
+    - FBT_Officer1
+    - FBT_Officer2
+    - Dying_Veronica
+    - VeronicaBlood
+    speakerID: FBT_Officer1
+    dialogueText: Dump their bodies in the river. The current will take them to sea.
+    cameraShotID: FBT_DeadBodies
+    animationTrigger: Talking1
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Dying_Dante
+    - FBT_Officer1
+    - FBT_Officer2
+    - Dying_Veronica
+    - VeronicaBlood
+    speakerID: FBT_Officer1
+    dialogueText: Don't worry. It's only scary the first time.
+    cameraShotID: FBT_Black
+    animationTrigger: Talking1
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Dying_Dante
+    - FBT_Officer1
+    - FBT_Officer2
+    - Dying_Veronica
+    - VeronicaBlood
+    speakerID: '-'
+    dialogueText: 
+    cameraShotID: FBT_Black
+    animationTrigger: Talking1
+    lineSFX: {fileID: 0}
+    displayDuration: 3
