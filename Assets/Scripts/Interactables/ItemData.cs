@@ -19,10 +19,13 @@ public class ItemData : ScriptableObject
     [TextArea]
     public string description;  // A description of the item
 
-    // NEW FIELD for document content.
     [Header("Document Content")]
     [TextArea(10, 20)] // Makes the text box bigger in the inspector
     public string itemText;
+
+    [Header("Consumable Properties")]
+    [Tooltip("Amount of health this consumable restores when used")]
+    public float healAmount = 25f;
 
     [Header("Visual Representation")]
     public Sprite icon;            // Icon for inventory UI display

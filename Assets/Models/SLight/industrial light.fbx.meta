@@ -3,7 +3,12 @@ guid: c04aa308d6158994e91f050364e22152
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IndusLamp
+    second: {fileID: 2100000, guid: d8f9ceaa92b77ad4dac76ec0dcf2ca88, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

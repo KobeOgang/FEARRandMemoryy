@@ -33,7 +33,7 @@ public class PauseManager : MonoBehaviour
     }
 
     // For UI button calls
-    private void TogglePause()
+    public void TogglePause()
     {
         if (GameUIManager.Instance != null)
         {

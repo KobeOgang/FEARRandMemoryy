@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SlmsB2.unity
     guid: d2bb800ecdf75144e93f2fc41b4be035
   - enabled: 1
-    path: Assets/Scenes/SlmsB3.unity
+    path: Assets/Scenes/Torture Room.unity
     guid: 274be54e1eb3c3c498a898675777b6e2
   - enabled: 1
     path: Assets/Scenes/SlmsB4.unity
@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SlmsME.unity
     guid: c34d9d07cf06ab24197801ab7f6a0099
+  - enabled: 1
+    path: Assets/Scenes/Tunnel.unity
+    guid: ce6004cc356b94549a617b389f735ba9
   m_configObjects: {}

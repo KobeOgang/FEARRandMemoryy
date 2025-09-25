@@ -81,6 +81,12 @@ public class DialogueManager : MonoBehaviour
         lastVisibleParticipants.Clear();
         IsDialogueActive = true;
 
+        // Only handle BGM if there's actually custom background music assigned
+        if (AudioManager.instance != null && data.customBackgroundMusic != null)
+        {
+            AudioManager.instance.StartDialogueBGM(data.customBackgroundMusic);
+        }
+
         if (data.hidePlayerDuringDialogue && participants.ContainsKey("Dante"))
         {
             participants["Dante"].gameObject.SetActive(false);
@@ -240,6 +246,11 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
+        if (AudioManager.instance != null && AudioManager.instance.isPlayingDialogueMusic)
+        {
+            AudioManager.instance.EndDialogueBGM();
+        }
+
         StopAllCoroutines();
         IsDialogueActive = false;
         IsNormalDialogueActive = false;

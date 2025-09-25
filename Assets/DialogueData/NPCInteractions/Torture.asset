@@ -1,0 +1,293 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005f70131e8d7af49bc299ae9ab08318, type: 3}
+  m_Name: Torture
+  m_EditorClassIdentifier: 
+  isMonologue: 0
+  hidePlayerDuringDialogue: 1
+  conversationLines:
+  - participantsToSetVisible:
+    - Torture_Dante
+    - Torture_Veronica
+    speakerID: Torture_Dante
+    dialogueText: "We're finally safe, kiddo.\r"
+    cameraShotID: Torture_DSigh
+    animationTrigger: RSigh
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Torture_Dante
+    - Torture_Veronica
+    speakerID: Torture_Veronica
+    dialogueText: Everything feels so numb...
+    cameraShotID: Torture_VSigh
+    animationTrigger: Yawn
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Torture_Dante
+    - Torture_Veronica
+    speakerID: Torture_Veronica
+    dialogueText: Wait... who... who are they??
+    cameraShotID: Torture_VSigh
+    animationTrigger: PBelow
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Torture_Dante
+    - Torture_Veronica
+    - Dying_Dante
+    - Dying_Veronica
+    speakerID: Torture_Dante
+    dialogueText: Wait... is that...
+    cameraShotID: Torture_DSigh
+    animationTrigger: WBackwards
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Torture_Veronica
+    - Dying_Dante
+    - Dying_Veronica
+    speakerID: Torture_Dante
+    dialogueText: Us??
+    cameraShotID: Torture_Bodies
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Torture_Dante
+    - Torture_Veronica
+    - Dying_Dante
+    - Dying_Veronica
+    speakerID: '-'
+    dialogueText: '-'
+    cameraShotID: Torture_Corpses
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Torture_Dante2
+    - Torture_Veronica
+    - Dying_Dante
+    - Dying_Veronica
+    speakerID: Torture_Dante2
+    dialogueText: Pulse is there...He's alive, this other me... But he's bleeding.
+    cameraShotID: Torture_CCheck
+    animationTrigger: CCheck
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Torture_Dante2
+    - Torture_Veronica
+    - Dying_Dante
+    - Dying_Veronica
+    speakerID: Torture_Veronica
+    dialogueText: The other me too... She's breathing...
+    cameraShotID: Torture_DVeronica
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Torture_Dante
+    - Torture_Veronica
+    - Dying_Dante
+    - Dying_Veronica
+    speakerID: '-'
+    dialogueText: (Sound of a gunshot echoes in the room)
+    cameraShotID: Torture_Corpses
+    animationTrigger: 
+    lineSFX: {fileID: 8300000, guid: c7665ffa41d22a3458734c497b653246, type: 3}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Torture_Dante3
+    - Torture_Veronica
+    - Dying_Dante
+    - Dying_Veronica
+    speakerID: Torture_Dante3
+    dialogueText: Get down, Kid!!
+    cameraShotID: Torture_Down
+    animationTrigger: STCrouch
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Torture_Dante3
+    - Torture_Veronica
+    - Dying_Dante
+    - Dying_Veronica
+    speakerID: Torture_Veronica
+    dialogueText: Is there someone? I don't see anyone...
+    cameraShotID: Torture_VPanic
+    animationTrigger: Terrified
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Torture_Dante4
+    - Torture_Veronica
+    - Dying_Dante
+    - Dying_Veronica
+    speakerID: Torture_Dante4
+    dialogueText: What? It's like we're hearing things... No sign of a bullet either.
+    cameraShotID: Torture_DSigh
+    animationTrigger: Wary
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Torture_Dante4
+    - Torture_Veronica
+    - Dying_Dante
+    - Dying_Veronica
+    speakerID: Torture_Dante4
+    dialogueText: But...
+    cameraShotID: Torture_DSigh
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Torture_Dante4
+    - Torture_Veronica
+    speakerID: Torture_Dante4
+    dialogueText: 'They''re gone... '
+    cameraShotID: Torture_Corpses
+    animationTrigger: Wary
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Torture_Dante4
+    - Torture_Veronica
+    - Dying_Dante
+    - Dying_Veronica
+    speakerID: Torture_Dante4
+    dialogueText: Goddammit! This place keeps playing tricks on us!
+    cameraShotID: Torture_DanteF
+    animationTrigger: Defeated
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Torture_Dante4
+    - Torture_VeronicaW
+    - TortureDoor
+    speakerID: Torture_VeronicaW
+    dialogueText: Wait.
+    cameraShotID: Torture_VWalk
+    animationTrigger: Walking
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Torture_Dante4
+    - Torture_Veronica2
+    - TortureDoor
+    speakerID: Torture_Veronica2
+    dialogueText: Wha- there wasn't a door here before either.
+    cameraShotID: Torture_Door
+    animationTrigger: PBelow
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Torture_Dante5
+    - Torture_Veronica2
+    - TortureDoor
+    speakerID: Torture_Dante5
+    dialogueText: This place... it wants us to go there...
+    cameraShotID: Torture_Door2
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Torture_Dante5
+    - Torture_Veronica2
+    - TortureDoor
+    speakerID: Torture_Dante5
+    dialogueText: Even if it's a trap, I don't think we have a choice.
+    cameraShotID: Torture_Door2
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Torture_Dante5
+    - Torture_Veronica2
+    - TortureDoor
+    speakerID: Torture_Dante5
+    dialogueText: I think it's best if we go now. Monsters could be behind us...
+      It's risky...
+    cameraShotID: Torture_DCloseUp
+    animationTrigger: HeadShake
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Torture_Dante5
+    - Torture_Veronica3
+    - TortureDoor
+    speakerID: Torture_Veronica3
+    dialogueText: I- I don't know... I'm scared. More monsters could lurk behind
+      that door...
+    cameraShotID: Torture_VCloseUp2
+    animationTrigger: LOver
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Torture_Dante6
+    - Torture_Veronica3
+    - TortureDoor
+    speakerID: Torture_Dante6
+    dialogueText: I understand you're scared, Kiddo. I am too. But we have no choice...
+    cameraShotID: Torture_Pats
+    animationTrigger: Kneeling
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Torture_Dante6.5
+    - Torture_Veronica3
+    - TortureDoor
+    speakerID: Torture_Dante6.5
+    dialogueText: Whatever happens behind this door, I promise to protect you. We've
+      been okay so far! We'll be fine, promise.
+    cameraShotID: Torture_Pats2
+    animationTrigger: KneelLoop
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Torture_Dante6.6
+    - Torture_Veronica3
+    - TortureDoor
+    speakerID: Torture_Veronica3
+    dialogueText: Okay... I-I trust you.
+    cameraShotID: Torture_VAgree
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Torture_Dante7
+    - Torture_Veronica2
+    - TortureDoor
+    speakerID: Torture_Dante7
+    dialogueText: Alright, Kiddo! Time to go and escape this hellhole!
+    cameraShotID: Torture_OpenDoor
+    animationTrigger: Door
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FB1
+    speakerID: '-'
+    dialogueText: (A strange light pierces your vision)
+    cameraShotID: Torture_FB
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FB1
+    - FB2
+    speakerID: '-'
+    dialogueText: (It becomes brighter, and suddenly you're in a different place)
+    cameraShotID: Torture_FB
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3

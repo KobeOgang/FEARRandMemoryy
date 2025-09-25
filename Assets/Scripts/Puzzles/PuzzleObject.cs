@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Cinemachine;
 
 public class PuzzleObject : MonoBehaviour
 {
@@ -17,6 +18,17 @@ public class PuzzleObject : MonoBehaviour
     [Tooltip("The list of events to trigger for each stage.")]
     public UnityEvent[] onSuccessEvents;
 
+    [Header("Close-Up Camera")]
+    [Tooltip("Virtual camera for close-up view of the puzzle")]
+    public CinemachineVirtualCamera closeUpCamera;
+
+    [Tooltip("How long to show close-up view before opening inventory")]
+    [Range(1f, 5f)]
+    public float closeUpDuration = 2.5f;
+
+    [Tooltip("Camera priority when active (should be higher than main camera)")]
+    public int activeCameraPriority = 20;
+
     [Header("Interaction Settings")]
     [Tooltip("The message displayed when the player first interacts with this locked object.")]
     [TextArea] public string lockedMessage = "Door is locked.";
@@ -24,16 +36,44 @@ public class PuzzleObject : MonoBehaviour
     [Tooltip("The text to display on the interact prompt (e.g., '[E] Examine', '[E] Check Device').")]
     public string interactPromptText = "[E] Examine";
 
+    [Header("Wrong Item Messages")]
+    [Tooltip("Random messages to display when the player uses the wrong item")]
+    [TextArea]
+    public string[] wrongItemMessages = {
+    "That's not it...",
+    "I don't think that would work...",
+    "This doesn't seem right.",
+    "Maybe I need something else.",
+    "That won't help here.",
+    "I should try a different approach.",
+    "This isn't what I need.",
+    "I need to think about this more...",
+    "That doesn't fit.",
+    "Wrong tool for the job."
+};
 
     private bool hasBeenNotified = false;
 
     private bool isPlayerNearby = false;
     private PersistentObjectID objectID;
 
+    private bool isShowingCloseUp = false;
+    private int originalCameraPriority = 0;
+
     private void Start()
     {
         objectID = GetComponent<PersistentObjectID>();
         if (objectID == null) return; // Exit if there's no ID
+
+        if (closeUpCamera != null)
+        {
+            originalCameraPriority = closeUpCamera.Priority;
+            closeUpCamera.Priority = 0; // Set to 0 by default
+        }
+        else
+        {
+            Debug.LogWarning($"[{gameObject.name}] No close-up camera assigned to PuzzleObject!");
+        }
 
         // On load, check the manager for a saved state
         int savedState;
@@ -42,9 +82,7 @@ public class PuzzleObject : MonoBehaviour
             // If a state was found, update this puzzle
             currentState = savedState;
 
-            // IMPORTANT: We must also restore the world to its correct state.
-            // For example, if a door was opened, it needs to be opened again on load.
-            // This loop re-invokes the success events for all completed stages.
+
             for (int i = 0; i < currentState; i++)
             {
                 if (i < onSuccessEvents.Length)
@@ -76,10 +114,67 @@ public class PuzzleObject : MonoBehaviour
             }
             else
             {
-                // ...then open the inventory to solve the puzzle.
-                InventoryManager.Instance.inventoryUI.OpenForPuzzle(this);
+                // MODIFIED: Handle subsequent interactions with camera sequence
+                if (UINotificationManager.Instance.IsNotificationActive())
+                {
+                    UINotificationManager.Instance.CloseNotificationImmediately();
+                }
+
+                // NEW: Start close-up camera sequence instead of opening inventory directly
+                if (!isShowingCloseUp)
+                {
+                    StartCloseUpSequence();
+                }
             }
         }
+    }
+
+    private void StartCloseUpSequence()
+    {
+        if (closeUpCamera == null)
+        {
+            Debug.LogWarning($"[{gameObject.name}] No close-up camera assigned! Opening inventory directly.");
+            OpenPuzzleInventory();
+            return;
+        }
+
+        isShowingCloseUp = true;
+
+        // Activate close-up camera
+        closeUpCamera.Priority = activeCameraPriority;
+
+        // Start coroutine to open inventory after delay
+        StartCoroutine(CloseUpSequence());
+    }
+
+    private IEnumerator CloseUpSequence()
+    {
+        // Wait for the close-up duration
+        yield return new WaitForSeconds(closeUpDuration);
+
+        // Open puzzle inventory
+        OpenPuzzleInventory();
+    }
+
+    private void OpenPuzzleInventory()
+    {
+        InventoryManager.Instance.inventoryUI.OpenForPuzzle(this);
+    }
+
+    public void OnInventoryClosed()
+    {
+        // Reset camera when inventory is closed
+        ResetCamera();
+    }
+
+    private void ResetCamera()
+    {
+        if (closeUpCamera != null)
+        {
+            closeUpCamera.Priority = 0; // Reset to default priority
+        }
+
+        isShowingCloseUp = false;
     }
 
     // This method is called by the UI when the player tries to use an item.
@@ -112,11 +207,18 @@ public class PuzzleObject : MonoBehaviour
             {
                 WorldStateManager.Instance.RecordPuzzleState(objectID.uniqueID, currentState);
             }
+
+            ResetCamera();
         }
         else
         {
             Debug.Log("Wrong item used for this stage.");
-            // Play a "fail" sound.
+
+            if (wrongItemMessages.Length > 0 && UINotificationManager.Instance != null)
+            {
+                string randomMessage = wrongItemMessages[Random.Range(0, wrongItemMessages.Length)];
+                UINotificationManager.Instance.ShowNotificationForDuration(randomMessage, 3f);
+            }
         }
     }
 
@@ -148,6 +250,12 @@ public class PuzzleObject : MonoBehaviour
             if (interactPrompt != null)
             {
                 interactPrompt.SetActive(false);
+            }
+
+            if (isShowingCloseUp)
+            {
+                StopAllCoroutines();
+                ResetCamera();
             }
         }
     }

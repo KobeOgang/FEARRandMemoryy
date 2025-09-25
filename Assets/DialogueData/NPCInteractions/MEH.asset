@@ -42,3 +42,93 @@ MonoBehaviour:
     animationTrigger: LookBehind
     lineSFX: {fileID: 0}
     displayDuration: 3
+  - participantsToSetVisible:
+    - MEH_Dante3
+    - MEH_MangErnesto
+    speakerID: MEH_Dante3
+    dialogueText: (Gets knocked down)
+    cameraShotID: ME_Fall
+    animationTrigger: FDown
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - MEH_Dante3
+    - MEH_MangErnesto2
+    speakerID: MEH_MangErnesto2
+    dialogueText: '-'
+    cameraShotID: ME_Fall2
+    animationTrigger: HeadShake
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - MEH_Dante4
+    - MEH_MangErnesto2
+    speakerID: MEH_Dante4
+    dialogueText: Wait- what?
+    cameraShotID: ME_DanteRising
+    animationTrigger: Rising2
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - MEH_Dante5
+    - MEH_MangErnesto2
+    speakerID: MEH_MangErnesto2
+    dialogueText: You know he deserved justice, but you didn't do anything, did you?!
+    cameraShotID: ME_MECloseUp
+    animationTrigger: AngryPoint
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - MEH_Dante6
+    - MEH_MangErnesto2
+    speakerID: MEH_Dante6
+    dialogueText: Wait... What do you mean?
+    cameraShotID: ME_DanteCloseUp
+    animationTrigger: Talking2
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - MEH_Dante5
+    - MEH_MangErnesto2
+    speakerID: MEH_MangErnesto2
+    dialogueText: 'You didn''t even help! '
+    cameraShotID: ME_MECloseUp
+    animationTrigger: AngryPoint
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - MEH_Dante5
+    - MEH_MangErnesto3
+    speakerID: MEH_MangErnesto3
+    dialogueText: Just leave me alone, will you!
+    cameraShotID: Me_MERun
+    animationTrigger: RunF
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - MEH_Dante4
+    - MEH_MangErnesto4
+    speakerID: MEH_MangErnesto4
+    dialogueText: (Runs to Exit)
+    cameraShotID: ME_MERun2
+    animationTrigger: RunF
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - MEH_Dante5
+    - MEH_MangErnesto4
+    speakerID: MEH_Dante5
+    dialogueText: Wait! It's not safe outside!
+    cameraShotID: ME_Reaching
+    animationTrigger: Reaching
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - MEH_Dante5
+    - MEH_MangErnesto4
+    speakerID: MEH_Dante5
+    dialogueText: Dang! I need to find him.
+    cameraShotID: ME_Reaching
+    animationTrigger: HeadShake
+    lineSFX: {fileID: 0}
+    displayDuration: 3

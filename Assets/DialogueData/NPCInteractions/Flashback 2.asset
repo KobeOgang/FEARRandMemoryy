@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005f70131e8d7af49bc299ae9ab08318, type: 3}
+  m_Name: Flashback 2
+  m_EditorClassIdentifier: 
+  isMonologue: 0
+  hidePlayerDuringDialogue: 1
+  conversationLines:
+  - participantsToSetVisible:
+    - FB1
+    - FB2
+    speakerID: '-'
+    dialogueText: A day later.
+    cameraShotID: FB2_Scene
+    animationTrigger: Yawn
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Flashback2_Dante
+    - FB2_Cop
+    speakerID: Flashback2_Dante
+    dialogueText: How long will I stay here, officer. On what charges?
+    cameraShotID: Flashback2_IntroCell
+    animationTrigger: Sulk
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Flashback2_Dante
+    - FB2_Cop
+    speakerID: FB2_Cop
+    dialogueText: (The officer walks away)
+    cameraShotID: FB2_CopWalk
+    animationTrigger: Walking
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Flashback2_Dante
+    - FB2_Cop
+    speakerID: Flashback2_Dante
+    dialogueText: "You can\u2019t just leave me here with no warrant, no charge or
+      trial!"
+    cameraShotID: Flashback2_IntroCell
+    animationTrigger: Argue
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Flashback2_Dante
+    - FB2_Cop
+    - FB2_Prisoner
+    speakerID: FB2_Prisoner
+    dialogueText: "He can\u2026 Martial Law is active now. We can't do anything about
+      it anymore."
+    cameraShotID: FB2_Prisoner
+    animationTrigger: Argue
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Flashback2_Dante
+    - FB2_Cop
+    - FB2_Prisoner
+    speakerID: Flashback2_Dante
+    dialogueText: 'I... '
+    cameraShotID: Flashback2_IntroCell
+    animationTrigger: Sulk
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Flashback2_Dante
+    - FB2_Cop
+    - FB2_Prisoner
+    speakerID: FB2_Prisoner
+    dialogueText: "A tip, newbie. When they call you back and take you to a room.
+      Don\u2019t say anything.\r"
+    cameraShotID: FB2_Prisoner
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Flashback2_Dante
+    - FB2_Cop
+    - FB2_Prisoner
+    speakerID: FB2_Prisoner
+    dialogueText: "Don\u2019t fight back. It makes them hurt you more.\r"
+    cameraShotID: FB2_Prisoner
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Flashback2_Dante
+    - FB2_Prisoner
+    speakerID: Flashback2_Dante
+    dialogueText: Expect this to be routine. Toughen up.
+    cameraShotID: FB2_Wait
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Flashback2_Dante
+    - FB2_Prisoner
+    speakerID: Flashback2_Dante
+    dialogueText: It's a long wait for us.
+    cameraShotID: FB2_Wait
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - Flashback2_Dante2
+    - FB2_Prisoner
+    speakerID: Flashback2_Dante2
+    dialogueText: ...
+    cameraShotID: FB2_DanteEnd
+    animationTrigger: SadIdle
+    lineSFX: {fileID: 0}
+    displayDuration: 3

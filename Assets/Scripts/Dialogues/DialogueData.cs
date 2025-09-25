@@ -11,5 +11,10 @@ public class DialogueData : ScriptableObject
     [Tooltip("Check this to make the main player character invisible during this dialogue sequence.")]
     public bool hidePlayerDuringDialogue;
 
+    [Header("Audio")]
+    [Tooltip("(Optional) Custom background music to play during this dialogue sequence")]
+    public AudioClip customBackgroundMusic;
+
     public DialogueLine[] conversationLines;
+
 }

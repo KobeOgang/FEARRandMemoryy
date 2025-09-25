@@ -39,6 +39,20 @@ public class UINotificationManager : MonoBehaviour
         StartCoroutine(NotificationSequence(message, duration));
     }
 
+    public void CloseNotificationImmediately()
+    {
+        StopAllCoroutines();
+        if (notificationPanel != null)
+        {
+            notificationPanel.SetActive(false);
+        }
+    }
+
+    public bool IsNotificationActive()
+    {
+        return notificationPanel != null && notificationPanel.activeSelf;
+    }
+
     private IEnumerator NotificationSequence(string message, float duration)
     {
         // Set the text and show the panel

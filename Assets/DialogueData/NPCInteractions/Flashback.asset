@@ -1,0 +1,235 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005f70131e8d7af49bc299ae9ab08318, type: 3}
+  m_Name: Flashback
+  m_EditorClassIdentifier: 
+  isMonologue: 0
+  hidePlayerDuringDialogue: 1
+  conversationLines:
+  - participantsToSetVisible:
+    - FB1
+    - FB2
+    speakerID: '-'
+    dialogueText: '-'
+    cameraShotID: Torture_FB
+    animationTrigger: Yawn
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FB1
+    - FB2
+    speakerID: '-'
+    dialogueText: '-'
+    cameraShotID: Torture_FB
+    animationTrigger: Yawn
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FB1
+    - FB2
+    speakerID: Torture_Veronica
+    dialogueText: One year ago. November, 1971.
+    cameraShotID: FB_OfficeView
+    animationTrigger: Yawn
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FlashbackO_DanteCaller
+    speakerID: FlashbackO_DanteCaller
+    dialogueText: "Dante... Are you really sure you're writing a paper on that? I
+      know the company has been publishing riskier articles as of late, but you don\u2019t
+      have to include yourself in that."
+    cameraShotID: FB_TalkPhone
+    animationTrigger: ListenPhone
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FlashbackO_Dante
+    speakerID: FlashbackO_Dante
+    dialogueText: I have t-
+    cameraShotID: FB_TalkPhone2
+    animationTrigger: TPHesitate
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FlashbackO_Dante
+    speakerID: FlashbackO_Dante
+    dialogueText: "I WANT to. I just\u2026 believe these stories need to be told."
+    cameraShotID: FB_TalkPhone2
+    animationTrigger: TPTalk2
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FlashbackO_DanteCaller
+    speakerID: FlashbackO_DanteCaller
+    dialogueText: "Now you\u2019re sounding like those journalists that go missing."
+    cameraShotID: FB_TalkPhone3
+    animationTrigger: ListenPhone
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FlashbackO_DanteCaller
+    speakerID: FlashbackO_DanteCaller
+    dialogueText: "That said, don\u2019t go too far. And prioritize your safety,
+      okay?"
+    cameraShotID: FB_TalkPhone3
+    animationTrigger: ListenPhone
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FlashbackO_Dante
+    speakerID: FlashbackO_Dante
+    dialogueText: Okay. Thanks, chief.
+    cameraShotID: FB_TalkPhone4
+    animationTrigger: EndCall
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FlashbackO_Dante2
+    speakerID: FlashbackO_Dante2
+    dialogueText: ...
+    cameraShotID: FB_DanteSad2
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FlashbackO_Dante2
+    speakerID: FlashbackO_Dante2
+    dialogueText: "(Mang Ernesto really died\u2026 I thought someone else would write
+      his story.. No one did\u2026)\r\n"
+    cameraShotID: FB_DanteSad
+    animationTrigger: SadWalk
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FlashbackO_Dante3
+    speakerID: FlashbackO_Dante3
+    dialogueText: 
+    cameraShotID: FB_DanteSit
+    animationTrigger: SitDown
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FlashbackO_Dante4
+    speakerID: FlashbackO_Dante4
+    dialogueText: 
+    cameraShotID: FB_Typing
+    animationTrigger: Typing
+    lineSFX: {fileID: 8300000, guid: e3a3eb3c90bb1a54f8c81ff310e4d002, type: 3}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FlashbackO_Dante4
+    - T_MangErnesto
+    speakerID: FlashbackO_Dante4
+    dialogueText: In July 1972, I wrote about Mang Ernesto. You could say I was guilty.
+      I found it in my conscience to do it.
+    cameraShotID: FB_Typewriter
+    animationTrigger: Typing
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - 
+    - T_PlazaMiranda
+    speakerID: FlashbackO_Dante4
+    dialogueText: But in July, when a bomb struck Plaza Miranda, I found myself feeling
+      the same injustice that happened to Mang Ernesto. It felt right to write about
+      it.
+    cameraShotID: FB_Typewriter
+    animationTrigger: Typing
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - 
+    - T_ManilaBombings
+    speakerID: FlashbackO_Dante4
+    dialogueText: The next year, I kept seeing trends in the administration. I noticed
+      the government using various crises in the country to consolidate power.
+    cameraShotID: FB_Typewriter
+    animationTrigger: Typing
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - 
+    - T_MartialLaw
+    speakerID: FlashbackO_Dante4
+    dialogueText: Then, the government did what I'd dreaded. By using the year-long
+      bombings as an excuse, they declared Martial Law. I couldn't simply keep still.
+      I wrote. With all my passion and vigor.
+    cameraShotID: FB_Typewriter
+    animationTrigger: Typing
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - 
+    - T_GenOrder
+    speakerID: FlashbackO_Dante4
+    dialogueText: The day after martial law, general order 2 was passed. I knew all
+      its implications to journalists like me. I simply didn't think it would happen
+      so soon-
+    cameraShotID: FB_Typewriter
+    animationTrigger: Typing
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - 
+    - T_GenOrder
+    speakerID: '-'
+    dialogueText: (Knocking)
+    cameraShotID: FB_Typewriter
+    animationTrigger: Typing
+    lineSFX: {fileID: 8300000, guid: 0677b21a09b0cc04a9f71ac888358984, type: 3}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FlashbackO_Dante4
+    - T_GenOrder
+    speakerID: '-'
+    dialogueText: '-'
+    cameraShotID: FB_Knock
+    animationTrigger: Typing
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FlashbackO_Dante4
+    - T_GenOrder
+    speakerID: FlashbackO_Dante4
+    dialogueText: Come in.
+    cameraShotID: FB_RoomView
+    animationTrigger: Typing
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FlashbackO_Dante4
+    - T_GenOrder
+    - FB_Cop
+    speakerID: FB_Cop
+    dialogueText: Dante Alvez. You are required by the state to come with me.
+    cameraShotID: FB_DanteCapture
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FB1
+    speakerID: '-'
+    dialogueText: 
+    cameraShotID: Torture_FB
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
+  - participantsToSetVisible:
+    - FB1
+    - FB2
+    speakerID: '-'
+    dialogueText: 
+    cameraShotID: Torture_FB
+    animationTrigger: 
+    lineSFX: {fileID: 0}
+    displayDuration: 3
